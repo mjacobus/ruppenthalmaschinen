@@ -3,7 +3,7 @@ class CreateServices < ActiveRecord::Migration
     create_table :services do |t|
       t.string :title
       t.string :slug
-      t.string :description
+      t.text :description
       t.boolean :enabled
 
       t.timestamps
