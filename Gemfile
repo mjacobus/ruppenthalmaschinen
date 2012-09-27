@@ -37,3 +37,11 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
+
+
+group :development, :test do
+  gem "ruby-prof"
+  gem "guard-rspec"
+  gem "rspec-rails", "~> 2.6"
+  gem 'factory_girl_rails', '~> 1.1' # need older version because of ruby 1.8
+end
