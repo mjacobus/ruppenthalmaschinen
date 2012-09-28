@@ -7,7 +7,6 @@ class Service < ActiveRecord::Base
   validates :title, :presence => true, :uniqueness => {:case_sensitive => false}
   validates :slug, :presence => true
   validates :description, :presence => true
-  validates :enabled, :presence => true
   
   
   # set title and slug

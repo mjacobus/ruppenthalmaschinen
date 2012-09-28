@@ -28,11 +28,5 @@ describe Service do
       it {should_not be_valid}
       it {should have(1).errors_on(:description)}
     end
-    
-    describe "#enabled" do
-      subject { Factory.build(:service, :enabled => nil) }
-      it {should_not be_valid}
-      it {should have(1).errors_on(:enabled)}
-    end
   end
 end
