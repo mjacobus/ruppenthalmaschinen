@@ -1,5 +1,6 @@
 ActiveAdmin.register Picture do
-  
+  config.clear_sidebar_sections!
+   
   def who_do_i_belong_to?
     :service
   end
