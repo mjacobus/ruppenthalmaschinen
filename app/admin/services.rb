@@ -15,7 +15,7 @@ ActiveAdmin.register Service do
     
   end
   
-  sidebar :pictures, :except => [:index] do
+  sidebar I18n.t(:pictures), :except => [:index] do
     ul do
       service.pictures.each do |picture|
         li img :src => picture.file.url(:small)
