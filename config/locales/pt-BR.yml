@@ -346,8 +346,13 @@
         images: Fotos
         picture: Foto
         enabled: Ativo
+        sequence: Ordem
         created_at: Criado em
         updated_at: Atualizado em
+      product_type:
+        name: Nome
+        description: Descrição
+        sequence: Ordem
         
         
   pictures: Fotos
