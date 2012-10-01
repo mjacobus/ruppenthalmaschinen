@@ -7,4 +7,10 @@ class ProductType < ActiveRecord::Base
   validates :sequence,
     :presence => true,
     :numericality => {:only_integer => true}
+    
+  def name=(new_name)
+    super(new_name)
+    self[:slug] = name.parameterize if name?
+  end
+    
 end

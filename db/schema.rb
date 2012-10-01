@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120928232109) do
+ActiveRecord::Schema.define(:version => 20121001035541) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -65,7 +65,19 @@ ActiveRecord::Schema.define(:version => 20120928232109) do
     t.integer  "sequence"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "slug"
   end
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.text     "application"
+    t.integer  "type_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "slug"
+  end
+
+  add_index "products", ["type_id"], :name => "index_products_on_type_id"
 
   create_table "services", :force => true do |t|
     t.string   "title"
