@@ -51,5 +51,6 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 1.1' # need older version because of ruby 1.8
   gem 'rb-inotify', '~> 0.8.8'
   # gem 'shoulda-context'
+  gem 'rack-mini-profiler'
   gem 'shoulda-matchers'
 end
