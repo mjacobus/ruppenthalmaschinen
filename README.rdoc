@@ -66,3 +66,6 @@ link:http://localhost:3000/contato
   root_path
 link:http://localhost:3000
   
+== Paginação
+Pra adicionar paginação nas listagens, adiciona o parametro per. Ex:
+  /serviços?per=2
