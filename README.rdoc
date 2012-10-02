@@ -43,3 +43,13 @@ Geram os seguintes HTMLS
   4: <a href="#url" class="classe" id="um_id">
       <img src="imagem.jpg" />
      </a>
+     
+== Urls
+  products_path          => #link: localhost:3000/produtos
+  product_path(@produto) => #link: localhost:3000/produtos/:tipo_produto/:url_do_produto
+  services_path          => #link: localhost:3000/servicos
+  service_path(@service) => #link: localhost:3000/servicos
+  about_path             => #link: localhost:3000/sobre-a-empresa
+  contact_path           => #link: localhost:3000/contato
+  root_path              => #link: localhost:3000
+  
