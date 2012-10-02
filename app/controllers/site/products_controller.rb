@@ -8,7 +8,7 @@ class Site::ProductsController < SiteController
     
     if params[:type].present?
       type = ProductType.find_by_slug(params[:type])
-      raise ("Tipo de produto não encontrado") unless type
+      raise_404("Tipo de produto não encontrado") unless type
       @products = @products.where(:type_id => type.id)
     end
     
@@ -20,7 +20,7 @@ class Site::ProductsController < SiteController
   def show
     @product = Product.enabled.find_by_slug(params[:product])
     
-    raise("Produto não encontrado") unless @product
+    raise_404("Produto não encontrado") unless @product
 
     respond_with(@product)
   end

@@ -1,5 +1,7 @@
 Diego::Application.routes.draw do
   
+  get "static/about"
+
   ##############################################################################
   # site routes
   ##############################################################################
@@ -22,6 +24,8 @@ Diego::Application.routes.draw do
     
   get "/servicos/:service" => "site/services#show", :as => :service
 
+  # static
+  get ":page.html" => "site/static#index", :as => :static
 
   ##############################################################################
   # ative admin
