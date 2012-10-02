@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Site</title>
+  <%= stylesheet_link_tag    "site", :media => "all" %>
+  <%= javascript_include_tag "site/products" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= params[:controller].parameterize %>_controller <%= params[:action].parameterize %>_action">
+  
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <div id="view_container"><%= yield %></div>
+
+</body>
+</html>
