@@ -6,6 +6,11 @@ describe ProductType do
   it { should validate_presence_of(:sequence) }
   it { should validate_numericality_of(:sequence).only_integer }
   
+  it { should allow_mass_assignment_of(:name) }
+  it { should allow_mass_assignment_of(:description) }
+  it { should allow_mass_assignment_of(:slug) }
+  it { should allow_mass_assignment_of(:sequence) }
+  
   describe "#slug" do
     subject { Factory.build(:product_type, :name => 'A Title') }
     it {should be_valid}

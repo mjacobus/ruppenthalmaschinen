@@ -1,5 +1,5 @@
 class ProductType < ActiveRecord::Base
-  attr_accessible :description, :name, :sequence
+  attr_accessible :description, :name, :sequence, :slug
   
   validates :name,
     :presence => true,
