@@ -63,5 +63,5 @@ link:localhost:3000/sobre-a-empresa
   contact_path
 link:localhost:3000/contato
 
-  root_path #link:localhost:3000
+  root_path link:localhost:3000
   
