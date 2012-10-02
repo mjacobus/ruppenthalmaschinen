@@ -31,7 +31,7 @@ O seguintes códigos
        <img src="imagem.jpg" />
      <% end %>
 
-Geram os seguintes HTMLS
+Geram os seguintes HTMLs
   1: <a href="#url">Um Título</a>
   
   2: <a href="#url" class="link">Um Título</a>
