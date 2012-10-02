@@ -52,17 +52,16 @@ link: localhost:3000/produtos
 link: localhost:3000/produtos/:tipo_produto/:url_do_produto
 
   services_path
-link: localhost:3000/servicos
+link:localhost:3000/servicos
 
   service_path(@service)
-link: localhost:3000/servicos
+link:localhost:3000/servicos
 
   about_path
-link: localhost:3000/sobre-a-empresa
+link:localhost:3000/sobre-a-empresa
 
   contact_path
-link: localhost:3000/contato
+link:localhost:3000/contato
 
-  root_path
-link: localhost:3000
+  root_path link:localhost:3000
   
