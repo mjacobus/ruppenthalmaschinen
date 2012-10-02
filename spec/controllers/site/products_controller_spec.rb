@@ -9,7 +9,8 @@ describe Site::ProductsController do
 
   describe "GET 'index'" do
     before do
-      3.times { Factory.create(:product) }
+      2.times { Factory.create(:product, :enabled => true) }
+      Factory.create(:product, :enabled => false)
     end
     
     it "returns http success" do
@@ -17,14 +18,17 @@ describe Site::ProductsController do
       response.should be_success
     end
     
-    it "assigns @products" do
+    it "assigns enabled products to @products" do
       get :index
-      assigns(:products).should_not be_nil 
+      assigns(:products).should =~ Product.enabled
     end
     
-    it "lists only enabled products" do
-      Product.should_receive(:enabled)
-      get :index
+    it "should paginate" do
+      q = stub("query")
+      Product.stub(:enabled).and_return(q)
+      q.should_receive(:page).with('2').and_return(q)
+      q.should_receive(:per).and_return(q)
+      get :index, :page => '2'
     end
     
   end
