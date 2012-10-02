@@ -1,2 +1,24 @@
-<h1>Site::Products#show</h1>
-<p>Find me in app/views/site/products/show.html.erb</p>
+<h1><%= @product.name %></h1>
+
+<ul>
+  <li>Tipo: <%= @product.type.name %></li>
+  <li>Applicação: <%= @product.application %></li>
+</ul>
+
+<h2>Especificações técnicas</h2>
+<p>Falta implementar o crud destas cracterísticas, mas basicamente é chave e valor</p>
+<ul>
+  <li>Peso: 1 quilo</li>
+  <li>Altura: 1 metro</li>
+  <li>x: Y</li>
+</ul>
+
+
+<h2>Fotos</h2>
+<p>O tamanho das fotos estão em app/models/Picture.rb. Podem ser alteradas.</p>
+<ul>
+  <li>Peso: 1 quilo</li>
+  <li>Altura: 1 metro</li>
+  <li>x: Y</li>
+</ul>
+

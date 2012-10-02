@@ -34,9 +34,23 @@ describe Site::ProductsController do
   end
 
   describe "GET 'show'" do
+    before { @product = Factory.create(:product) }
+    
     it "returns http success" do
-      show(Factory.build(:product))
+      show(@product)
       response.should be_success
+    end
+    
+    it "should assign @product" do
+      show(@product)
+      assigns(:product).should eq(@product)
+    end
+    
+    it "shows only available" do
+      q = stub("query")
+      Product.should_receive(:enabled).and_return(q)
+      q.should_receive(:find_by_slug).with(@product.slug).and_return(q)
+      show(@product)
     end
   end
 

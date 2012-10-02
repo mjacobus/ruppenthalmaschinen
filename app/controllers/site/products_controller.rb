@@ -7,6 +7,10 @@ class Site::ProductsController < SiteController
   end
 
   def show
+    @product = Product.enabled.find_by_slug(params[:product])
     
+    raise("Produto não encontrado") unless @product
+
+    respond_with(@product)
   end
 end
