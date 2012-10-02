@@ -3,19 +3,7 @@
 <ul>
   <% @products.each do |p|%>
   <li>
-    <%= p.name %>
-    
-    <%= link_to "Ver", product_path(p) %>
-    
-    <!--
-      Carlos
-      O link pode ser assim também
-      
-      <%= link_to product_path(p) do %>
-        <img src="blablah"/>
-        <!-- qquer coisa aqui dentro faz parte do link
-      <% end %>
-    -->
+    <%= p.name %> | <%= p.type.name %> | <%= link_to "Ver", product_path(p) %>
   </li>
   <% end %>
 <ul>
