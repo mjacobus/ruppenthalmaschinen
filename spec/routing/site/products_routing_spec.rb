@@ -12,12 +12,12 @@ describe Site::ProductsController, "routing" do
       :page => '5')
   end
   
-  it "should route to #show" do
+  it "should route to #index" do
     {:get => "/produtos/maquinas"}.should route_to("site/products#index",
       :type => 'maquinas')
   end
   
-  it "should route to #show {:page => '5'}" do
+  it "should route to #index {:page => '5'}" do
     {:get => "/produtos/maquinas/5"}.should route_to("site/products#index",
       :type => 'maquinas',
       :page => '5')

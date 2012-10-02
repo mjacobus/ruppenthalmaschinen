@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-def show(product = Factory.create(:product), options = {})
-  get :show, {:type => product.type.slug, :product => product.slug}.merge(options)
-  product
-end
-
 describe Site::ProductsController do
+  
+  def show(product = Factory.create(:product), options = {})
+    get :show, {:type => product.type.slug, :product => product.slug}.merge(options)
+    product
+  end
 
   describe "GET 'index'" do
     before do
@@ -46,11 +46,17 @@ describe Site::ProductsController do
       assigns(:product).should eq(@product)
     end
     
-    it "shows only available" do
+    it "shows only enabled" do
       q = stub("query")
       Product.should_receive(:enabled).and_return(q)
       q.should_receive(:find_by_slug).with(@product.slug).and_return(q)
       show(@product)
+    end
+    
+    it "raises error when @service is nil" do
+      @product.enabled = false;
+      @product.save!
+      lambda { show(@product) }.should raise_error
     end
   end
 

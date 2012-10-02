@@ -15,4 +15,8 @@ class Service < ActiveRecord::Base
     self[:slug] = new_title.parameterize if new_title
   end
   
+  def self.enabled
+    where(:enabled => true)
+  end
+  
 end

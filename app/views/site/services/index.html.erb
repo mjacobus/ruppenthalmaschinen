@@ -1,0 +1,14 @@
+<h1>Serviços</h1>
+
+<ul>
+  <% @services.each do |s|%>
+  <li>
+    <%= s.title %>
+    <p><%= s.description %></p>
+    
+    <%= link_to "Ver", service_path(s) %>
+  </li>
+  <% end %>
+<ul>
+  
+  <%= paginate(@services) %>

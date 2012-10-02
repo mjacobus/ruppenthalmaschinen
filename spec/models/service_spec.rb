@@ -17,4 +17,15 @@ describe Service do
     its(:title) {should == 'A Title'}
     its(:slug) {should == 'a-title'}
   end
+  
+  describe ".enabled" do
+    before do
+      @enabled = [Factory.create(:service),Factory.create(:service)]
+      Factory.create(:service, :enabled => false)
+    end
+    
+    it "should get only enabled services" do
+      Service.enabled.should =~ @enabled
+    end
+  end
 end
