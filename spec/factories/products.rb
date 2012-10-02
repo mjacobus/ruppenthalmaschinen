@@ -3,8 +3,9 @@
 
 FactoryGirl.define do
   factory :product do
-    name "MyString"
+    name {FactoryGirl.generate(:string)}
     application "MyText"
     association :type, :factory => :product_type
+    enabled true
   end
 end

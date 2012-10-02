@@ -1,9 +1,9 @@
 class Site::ProductsController < SiteController
-  include Site::ProductsHelper
-  
+  respond_to :html
   
   def index
-    
+    @products = Product.enabled
+    respond_with(@products)
   end
 
   def show

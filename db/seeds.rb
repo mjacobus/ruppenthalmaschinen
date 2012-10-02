@@ -22,7 +22,8 @@
   Product.create!(
     :name => "Produto Muito Tri #{i}",
     :application => "Este produto serve para blah blah blah.",
-    :type_id => (i%2 == 0) ? @peca.id : @maquina.id
+    :type_id => (i%2 == 0) ? @peca.id : @maquina.id,
+    :enabled => true
   )
 end
 

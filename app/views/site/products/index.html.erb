@@ -1,2 +1,21 @@
-<h1>Site::Products#index</h1>
-<p>Find me in app/views/site/products/index.html.erb</p>
+<h1>Produtos</h1>
+
+<ul>
+  <% @products.each do |p|%>
+  <li>
+    <%= p.name %>
+    
+    <%= link_to "Ver", product_path(p) %>
+    
+    <!--
+      Carlos
+      O link pode ser assim também
+      
+      <%= link_to product_path(p) do %>
+        <img src="blablah"/>
+        <!-- qquer coisa aqui dentro faz parte do link
+      <% end %>
+    -->
+  </li>
+  <% end %>
+<ul>
