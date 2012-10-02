@@ -46,10 +46,10 @@ Geram os seguintes HTMLS
      
 == Urls
   products_path
-link: localhost:3000/produtos
+link:localhost:3000/produtos
 
   product_path(@produto)
-link: localhost:3000/produtos/:tipo_produto/:url_do_produto
+link:localhost:3000/produtos/:tipo_produto/:url_do_produto
 
   services_path
 link:localhost:3000/servicos
@@ -63,5 +63,6 @@ link:localhost:3000/sobre-a-empresa
   contact_path
 link:localhost:3000/contato
 
-  root_path link:localhost:3000
+  root_path
+link:localhost:3000
   
