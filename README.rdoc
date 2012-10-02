@@ -46,7 +46,7 @@ Geram os seguintes HTMLS
      
 == Urls
   products_path
-link:http://localhost:3000/produtos, "produtos"
+link:http://localhost:3000/produtos
 
   product_path(@produto)
 link:http://localhost:3000/produtos/:tipo_produto/:url_do_produto
