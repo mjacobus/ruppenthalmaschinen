@@ -32,4 +32,16 @@ Diego::Application.routes.draw do
   ##############################################################################
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
+  
+  # http://stackoverflow.com/questions/12645936/how-to-get-the-request-uri-inside-active-admin
+  namespace :admin do
+    resources :services do
+      resources :pictures
+    end
+  
+    resources :products do
+      resources :pictures
+    end
+  end
+
 end

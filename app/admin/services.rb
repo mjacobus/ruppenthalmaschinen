@@ -3,7 +3,7 @@ ActiveAdmin.register Service do
     column :picture do |service|
       picture = service.pictures.first
       if picture
-        img :src => picture.file.url(:small)
+        img :src => picture.file.url(:thumb)
       end
     end
     column :title
@@ -15,7 +15,7 @@ ActiveAdmin.register Service do
     
   end
   
-  sidebar I18n.t(:pictures), :except => [:index] do
+  sidebar I18n.t(:pictures), :except => [:index, :new] do
     ul do
       service.pictures.each do |picture|
         li img :src => picture.file.url(:small)
