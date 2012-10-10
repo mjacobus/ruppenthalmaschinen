@@ -1,4 +1,5 @@
 ActiveAdmin.register Picture do
+  menu false
   config.clear_sidebar_sections!
    
   controller.belongs_to :product, :service, :polymorphic => true

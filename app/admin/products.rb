@@ -8,6 +8,9 @@ ActiveAdmin.register Product do
     end
     column :name
     column :category
+    column :features do |product|
+      link_to t(:manage), "/admin/products/#{product.id}/features"
+    end
     column :images do |product|
       link_to t(:manage), "/admin/products/#{product.id}/pictures"
     end
@@ -16,6 +19,15 @@ ActiveAdmin.register Product do
     
   end
 
+  sidebar I18n.t(:features), :except => [:index, :new] do
+    ul do
+      product.features.each do |feature|
+        li feature.name + ": " + feature.value
+      end
+      
+      li link_to t(:manage), "/admin/products/#{product.id}/features"
+    end
+  end
 
   sidebar I18n.t(:pictures), :except => [:index, :new] do
     ul do
