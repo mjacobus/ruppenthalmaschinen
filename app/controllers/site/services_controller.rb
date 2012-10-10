@@ -1,4 +1,4 @@
-class Site::ServicesController < ApplicationController
+class Site::ServicesController < SiteController
   respond_to :html
   
   def index
