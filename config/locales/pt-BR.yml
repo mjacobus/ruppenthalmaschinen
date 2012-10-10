@@ -306,6 +306,8 @@
   Images: Fotos
   manage: Gerenciar
   title: Título
+  name: nome
+  features: Especificações Técnicas
   
   
   
@@ -318,6 +320,7 @@
       product_type: Tipo de Produto
       type: Tipo
       picture: Foto
+      feature: Especificação Técnica
     attributes:
       admin_user:
         current_sign_in_at: Login atual em
