@@ -55,7 +55,7 @@ link:http://localhost:3000/produtos/:tipo_produto/:url_do_produto
 link:http://localhost:3000/servicos
 
   service_path(@service)
-link:http://localhost:3000/servicos
+link:http://localhost:3000/servicos/nome-do-servico
 
   static_path("sobre-a-empresa")
 link:http://localhost:3000/sobre-a-empresa.html
