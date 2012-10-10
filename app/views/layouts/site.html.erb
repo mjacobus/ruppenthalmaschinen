@@ -10,6 +10,16 @@
   
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  
+  
+  <div class="menu">
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Produtos", products_path %></li>
+      <li><%= link_to "Serviços", services_path %></li>
+    </ul>
+    
+  </div>
 
   <div id="view_container"><%= yield %></div>
 

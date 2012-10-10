@@ -5,6 +5,7 @@ Diego::Application.routes.draw do
   ##############################################################################
   # site routes
   ##############################################################################
+  root :to => "site/home#index"
   
   # site/products controller
   
