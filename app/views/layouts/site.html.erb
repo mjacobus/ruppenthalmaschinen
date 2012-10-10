@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Site</title>
+  <title><%= content_for?(:title) ? content_for(:title) : 'Nome do Site' %></title>
   <%= stylesheet_link_tag    "site", :media => "all" %>
   <%= javascript_include_tag "site/products" %>
   <%= csrf_meta_tags %>
@@ -20,7 +20,8 @@
     </ul>
     
   </div>
-
+  
+  <div id="breadcrumb"></div>
   <div id="view_container"><%= yield %></div>
 
 </body>
