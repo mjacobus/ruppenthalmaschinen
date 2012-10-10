@@ -5,6 +5,7 @@ describe Product do
   it {should validate_uniqueness_of(:name).case_insensitive}
   it {should validate_presence_of(:application)}
   it {should belong_to(:type).class_name(ProductType)}
+  it {should belong_to(:category)}
   it {should have_many(:pictures)}
   
   it { should allow_mass_assignment_of(:name) }
@@ -12,6 +13,7 @@ describe Product do
   it { should allow_mass_assignment_of(:slug) }
   it { should allow_mass_assignment_of(:enabled) }
   it { should allow_mass_assignment_of(:type_id) }
+  it { should allow_mass_assignment_of(:category_id) }
   
   
   describe "#slug" do

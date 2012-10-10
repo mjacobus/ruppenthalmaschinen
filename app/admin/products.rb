@@ -7,6 +7,7 @@ ActiveAdmin.register Product do
       end
     end
     column :name
+    column :category
     column :images do |product|
       link_to t(:manage), "/admin/products/#{product.id}/pictures"
     end

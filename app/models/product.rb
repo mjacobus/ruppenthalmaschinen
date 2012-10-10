@@ -1,8 +1,10 @@
 class Product < ActiveRecord::Base
-  attr_accessible :application, :name, :slug, :type_id, :enabled
+  attr_accessible :application, :name, :slug,
+    :type_id, :enabled, :category_id
   
   has_many :pictures, :as => :imageable
   belongs_to :type, :class_name => :ProductType
+  belongs_to :category
   
   
   validates :name, :presence => true,
