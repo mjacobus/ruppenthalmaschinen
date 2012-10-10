@@ -6,11 +6,11 @@
 </ul>
 
 <h2>Especificações técnicas</h2>
-<p>Falta implementar o crud destas cracterísticas, mas basicamente é chave e valor</p>
+
 <ul>
-  <li>Peso: 1 quilo</li>
-  <li>Altura: 1 metro</li>
-  <li>x: Y</li>
+<% @product.features.each do |feature| %>
+  <li><%= feature.name %>: <%= feature.value %></li>
+<% end %>
 </ul>
 
 

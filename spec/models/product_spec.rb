@@ -7,6 +7,7 @@ describe Product do
   it {should belong_to(:type).class_name(ProductType)}
   it {should belong_to(:category)}
   it {should have_many(:pictures)}
+  it {should have_many(:features)}
   
   it { should allow_mass_assignment_of(:name) }
   it { should allow_mass_assignment_of(:application) }

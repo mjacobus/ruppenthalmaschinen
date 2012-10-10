@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
     :type_id, :enabled, :category_id
   
   has_many :pictures, :as => :imageable
+  has_many :features
   belongs_to :type, :class_name => :ProductType
   belongs_to :category
   
