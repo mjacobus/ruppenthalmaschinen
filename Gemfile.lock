@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: git@github.com:mjacobus/Breadcrumb.git
-  revision: af2de621db9cd1acb4acd6d228b6315d7ecf8b4c
+  revision: 22fd17941188f0a51348710271e3a584a23601da
   specs:
     breadcrumb (0.0.1)
       rails (~> 3.2.8)
