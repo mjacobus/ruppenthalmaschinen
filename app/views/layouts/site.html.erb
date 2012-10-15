@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= content_for?(:title) ? content_for(:title) : 'Nome do Site' %></title>
+  <title><%= content_for?(:title) ? content_for(:title) : breadcrumb.titleize %></title>
   <%= stylesheet_link_tag    "site", :media => "all" %>
   <%= javascript_include_tag "site/products" %>
   <%= csrf_meta_tags %>
@@ -11,15 +11,15 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   
-  
   <div class="menu">
     <ul>
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Produtos", products_path %></li>
       <li><%= link_to "Serviços", services_path %></li>
     </ul>
-    
   </div>
+  
+  <%= raw breadcrumb.prepend("Home","/") %>
   
   <div id="breadcrumb"></div>
   <div id="view_container"><%= yield %></div>

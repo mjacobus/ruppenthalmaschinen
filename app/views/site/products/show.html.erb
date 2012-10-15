@@ -1,3 +1,9 @@
+<%
+breadcrumb.add("Produtos", "/produtos")
+breadcrumb.add(@product.type.name, product_type_path(@product.type.slug))
+breadcrumb.add(@product.name)
+%>
+
 <h1><%= @product.name %></h1>
 
 <ul>
