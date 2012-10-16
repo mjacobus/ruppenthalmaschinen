@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class Site::ServicesController < SiteController
   respond_to :html
   
