@@ -2,16 +2,16 @@
 <html>
 <head>
   <title><%= content_for?(:title) ? content_for(:title) : breadcrumb.titleize %></title>
-  <%= stylesheet_link_tag    "reset", :media => "all" %>
-  <%= stylesheet_link_tag    "base", :media => "all" %>
-  <%= stylesheet_link_tag    "tipTip", :media => "all" %>
-  <%= stylesheet_link_tag    "short-code", :media => "all" %>
-  <%= stylesheet_link_tag    "prettyPhoto", :media => "all" %>
-  <%= stylesheet_link_tag    "css3", :media => "all" %>
-  <%= stylesheet_link_tag    "slider", :media => "all" %>
-  <%= stylesheet_link_tag    "short-code", :media => "all" %>
-  <%= stylesheet_link_tag    "piecemaker", :media => "all" %>
-  <%= stylesheet_link_tag    "ie7", :media => "all" %>
+  <%= stylesheet_link_tag    "site/reset", :media => "all" %>
+  <%= stylesheet_link_tag    "site/base", :media => "all" %>
+  <%= stylesheet_link_tag    "site/tiptip", :media => "all" %>
+  <%= stylesheet_link_tag    "site/short-code", :media => "all" %>
+  <%= stylesheet_link_tag    "site/prettyphoto", :media => "all" %>
+  <%= stylesheet_link_tag    "site/css3", :media => "all" %>
+  <%= stylesheet_link_tag    "site/slider", :media => "all" %>
+  <%= stylesheet_link_tag    "site/short-code", :media => "all" %>
+  <%= stylesheet_link_tag    "site/piecemaker", :media => "all" %>
+  
   <%= javascript_include_tag "jquery" %>
   <%= javascript_include_tag "jquery.nivo.slider" %>
   <%= javascript_include_tag "scripts" %>
