@@ -8,7 +8,7 @@ class Picture < ActiveRecord::Base
     :url => "/system/:class/:attachment/:id_partition/:style.:extension",
     :styles => {
       :original => "640x480>",
-      :medium => "343x257>",
+      :medium => "286x214>",
       :small => "160x120>",
       :thumb => "80x60>"
     }

@@ -1,3 +1,224 @@
 <% content_for(:title){ 'Home' } %>
-<h1>Home</h1>
-<%= __FILE__ %>
+
+<%= render :template => "site/header" %> 
+<!--Slider-->
+<div class="clear" id="slider-bg">
+<div class="full-width-wrapper" id="slider-frame">
+<div class="fixed-width-wrapper maxx-theme" id="slider-wrapper">
+<div id="slider" class="nivoSlider">
+<a href="#">
+<img src="/assets/pix/slide1.jpg" alt="" title="#htmlcaption">
+</a>
+<a href="#">
+<img src="/assets/pix/slide2.jpg" alt="" title="">
+</a>
+<a href="#">
+<img src="/assets/pix/slide3.jpg" alt="" title="#htmlcaption2">
+</a>
+<a href="#">
+<img src="/assets/pix/slide4.jpg" alt="" title="">
+</a>
+<a href="#">
+<img src="/assets/pix/slide5.jpg" alt="" title="#htmlcaption3">
+</a>
+</div>
+<div id="htmlcaption" class="nivo-html-caption">
+<h1>Lorem ipsum dolor sit amet
+</h1>
+<strong>This
+</strong> is an example of a 
+<em>HTML
+</em> caption with 
+<a href="#">a link
+</a>.                
+</div>
+<div id="htmlcaption2" class="nivo-html-caption">
+<h1>Lorem ipsum dolor sit amet
+</h1>
+<strong>This
+</strong> is an example of a 
+<em>HTML
+</em> caption with 
+<a href="#">a link
+</a>.                
+</div>
+<div id="htmlcaption3" class="nivo-html-caption">
+<h1>Lorem ipsum dolor sit amet
+</h1>
+<strong>This
+</strong> is an example of a 
+<em>HTML
+</em> caption with 
+<a href="#">a link
+</a>.                
+</div>
+</div>
+</div>
+</div>
+<!--/Slider-->
+<!--Body content-->
+<div class="full-width-wrapper">
+<div class="fixed-width-wrapper body-divider " id="body-content">
+<!--Entry-->
+<div class="entry three-column fixed-width-wrapper">
+<!--block-->
+<div class="block type1">
+<h1 class="first-word double-color">Who we are ?
+</h1>
+<div class="content">
+<a href="#" title="" class="preloading-light img-border align-none">
+<img src="/assets/pix/slide1.jpg" width="280" alt="">
+</a>
+<div class="clear">
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+<a href="#" class="tipMe" title="This is a tooltip">This is a tooltip 
+</a>, nibh ut feugiat placerat, orci lacus accumsan erat, eget porttitor arcu velit a lacus.
+</p>
+<p>Sed tempus bibendum risus, nec dignissim sem vestibulum ut. Nam iaculis aliquam elementum. Nunc sed dignissim sapien. 
+</p>
+</div>
+<a class="read-more" href="#" title="Read more">Read more
+</a>
+</div>
+<!--/block-->
+<!--block-->
+<div class="block type2">
+<h1 class="first-word double-color">Produtos
+</h1>
+<div class="content">
+<ul class="zigzag list">
+<li>
+<img src="/assets/icons/clipboard_48.png" alt="" class="align-right">
+<strong>Produto Bala 1
+</strong>
+<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ... 
+</span>
+<a href="#" title="">more
+</a>
+</li>
+<li>
+<img src="/assets/icons/bug_48.png" alt="" class="align-left">
+<strong>Produto Bala 2
+</strong>
+<span>Nullam vel tincidunt ligula. Donec ligula mauris, vehicula quis feugiat at. 
+</span>
+<a href="#" title="">more
+</a>
+</li>
+<li>
+<img src="/assets/icons/help_48.png" alt="" class="align-right">
+<strong>Produto Bala 3
+</strong>
+<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ... 
+</span>
+<a href="#" title="">more
+</a>
+</li>
+</ul>
+</div>
+<a class="read-more" href="#" title="Read more">Read more
+</a>
+</div>
+<!--/block-->
+<!--block-->
+<div class="block type3">
+<h1 class="first-word double-color">Nossos serviços
+</h1>
+<div class="content">
+<p>Nullam vel tincidunt ligula. Donec ligula mauris, vehicula quis feugiat at, consequat ut velit. Praesent vestibulum orci vitae nibh cursus vulputate. Donec aliquam laoreet commodo. Praesent vestibulum orci vitae nibh.
+</p>
+<ul class="list point">
+<li>
+<a href="#" title="">
+<em>1.
+</em>Lorem ipsum dolor sit amet, consectetur
+</a>
+</li>
+<li>
+<a href="#" title="">
+<em>2.
+</em>Donec ligula mauris
+</a>
+</li>
+<li>
+<a href="#" title="">
+<em>3.
+</em>Aenean sed
+</a>
+</li>
+<li>
+<a href="#" title="">
+<em>4.
+</em>Nullam ven tincidunt dolor
+</a>
+</li>
+<li>
+<a href="#" title="">
+<em>5.
+</em>Lorem ipsum dolor
+</a>
+</li>
+</ul>
+</div>
+<a class="read-more" href="#" title="Read more">Read more
+</a>
+</div>
+<!--/block-->
+</div>
+<!--/Entry-->
+<!--Get in touch-->
+<div id="get-in-touch" class="fixed-width-wrapper">
+<div class="via-phone-number float-left">
+<a class="icon sprite float-left" title="Keep in touch with us">Keep in touch with us
+</a>
+<h2>We can Help You. Call Us 
+<strong>+ 1 800 123 4567
+</strong>
+</h2>
+<span>Keep in touch with our news and receive NEWS
+</span>
+</div>
+<div class="via-email float-right">
+<form action="" method="post">
+<div>
+<input class="input-field border-radius-3px reset-text float-left" value="Enter your E-mail address...">
+</div>
+<div>
+<button type="submit" class="black border-radius-3px float-right">
+<em class="sprite">
+</em>Subcribe !
+</button>
+</div>
+</form>
+</div>
+</div>
+<!--/Get in touch-->
+</div>
+</div>
+<!--/Body content-->
+<!--Footer Extra-->
+<div class="full-width-wrapper" id="footer-extra-wrapper">
+<div class="fixed-width-wrapper">
+<div id="copyright">
+<a href="#" class="logo float-left" title="">
+<img src="/assets/logo-footer.png" alt="">
+</a>
+<ul>
+<li>(c) 2011 Allright reservred 
+</li>
+<li>
+<a href="#" title="">Privacy Policy
+</a>
+</li>
+<li>
+<a href="#" title="">Terms and Conditions
+</a>
+</li>
+</ul>
+<a href="#" class="back-to-top sprite" title="Back to top">Back to top
+</a>
+</div>
+</div>
+</div>
+<!--/Footer Extra-->
