@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class Site::ProductsController < SiteController
   respond_to :html
   
