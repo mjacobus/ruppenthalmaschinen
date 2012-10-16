@@ -30,7 +30,7 @@ gem 'jquery-rails'
 
 gem "breadcrumb", :git => "git@github.com:mjacobus/Breadcrumb.git"
 
-#gem "simple_menu", :git => "git@github.com:mjacobus/simple_menu.git"
+gem "simple_menu", :git => "git@github.com:mjacobus/simple_menu.git"
 
 
 # To use ActiveModel has_secure_password

@@ -22,6 +22,13 @@ GIT
     breadcrumb (0.0.1)
       rails (~> 3.2.8)
 
+GIT
+  remote: git@github.com:mjacobus/simple_menu.git
+  revision: 1afca04b08a084dafb9bdf6e595a2bb9a7b7a55f
+  specs:
+    simple_menu (0.0.1)
+      rails (~> 3.2.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -233,5 +240,6 @@ DEPENDENCIES
   ruby-prof
   sass-rails (~> 3.2.3)
   shoulda-matchers
+  simple_menu!
   therubyracer
   uglifier (>= 1.0.3)
