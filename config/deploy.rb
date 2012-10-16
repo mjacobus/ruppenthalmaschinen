@@ -51,7 +51,7 @@ end
 namespace :deploy do
   desc "Remove .rvmrc"
   task :remove_rvm_file, :roles => :app do
-    run "rm #{release_path}/.rvm.rc"
+    run "rm #{release_path}/.rvmrc"
   end
 end
 
