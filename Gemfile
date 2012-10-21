@@ -50,7 +50,6 @@ gem 'capistrano'
 
 
 group :development, :test do
-  gem 'rcov'
   gem "ruby-prof"
   gem "guard-rspec"
   gem "rspec-rails", "~> 2.6"
