@@ -18,7 +18,10 @@
   rake db:migrate
   
   # cria dados de mentirinha
-  rake db:seed    
+  rake db:seed
+  
+  # roda a página em http://localhost:3000
+  rails server
 
 == Para buscar atualizações
   cd <pasta projeto>
