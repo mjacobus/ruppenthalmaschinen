@@ -1,5 +1,5 @@
 class Service < ActiveRecord::Base
-  has_many :pictures, :as => :imageable
+  has_many :pictures, :as => :imageable, :order => :sequence
   
   attr_accessible :title, :description, :slug, :enabled
   

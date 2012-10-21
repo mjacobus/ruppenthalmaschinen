@@ -2,8 +2,8 @@ class Product < ActiveRecord::Base
   attr_accessible :application, :name, :slug,
     :type_id, :enabled, :category_id
   
-  has_many :pictures, :as => :imageable
-  has_many :features
+  has_many :pictures, :as => :imageable, :order => :sequence
+  has_many :features, :order => :sequence
   belongs_to :type, :class_name => :ProductType
   belongs_to :category
   

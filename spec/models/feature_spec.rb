@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'spec_helper'
 
 describe Feature do
@@ -23,5 +24,6 @@ describe Feature do
   
   it { should allow_mass_assignment_of(:name) }
   it { should allow_mass_assignment_of(:value) }
+  it { should allow_mass_assignment_of(:sequence) }
   it { should allow_mass_assignment_of(:product_id) }
 end
