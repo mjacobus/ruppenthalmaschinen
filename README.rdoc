@@ -1,12 +1,24 @@
 == Para instalar
+  # clona repositório
   git clone git@github.com:mjacobus/Diego.git <pasta projeto>
-  cd <pasta projeto> # na primeira vez é feita um pergunta, responder YES
-                     # a pergunta ocorrre porque uma versão direferente de ruby é
-                     # requisitada
-  bundle install  # instala dependencias
-  rake db:create  # cria o banco
-  rake db:migrate # cria as tabelas
-  rake db:seed    # cria dados de mentirinha
+  
+  # cria branch local develpment, caso ainda não tenha
+  git checkout -b development origin/development
+  
+  # busca codigo atual
+  git pull origin develpment 
+  
+  # instala dependencias
+  bundle install  
+  
+  # cria o banco
+  rake db:create  
+  
+  # cria as tabelas
+  rake db:migrate
+  
+  # cria dados de mentirinha
+  rake db:seed    
 
 == Para buscar atualizações
   cd <pasta projeto>
