@@ -7,7 +7,7 @@ set :application, "test.ruppenthalmaschinen.com.br"
 set :user, 'marceloadmin'
 set :deploy_to, "/webapps/#{application}"
 set :domain, "www.ruppenthalmaschinen.com.br"
-after 'deploy:update_code', 'deploy:symlink_db', 'deploy:remove_rvm_file'
+after 'deploy:update_code', 'deploy:symlink_db'
 
 
 default_run_options[:pty] = true
@@ -47,14 +47,6 @@ namespace :deploy do
     run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
   end
 end
-
-namespace :deploy do
-  desc "Remove .rvmrc"
-  task :remove_rvm_file, :roles => :app do
-    run "rm #{release_path}/.rvmrc"
-  end
-end
-
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
