@@ -10,7 +10,27 @@ breadcrumb.add(@service.title)
 </ul>
 
 
-<h2>Fotos</h2>
-<p>O tamanho das fotos estão em app/models/Picture.rb. Podem ser alteradas.</p>
 
-
+<% unless @service.pictures.empty? %>
+  <h2>Fotos</h2>
+  
+  <div class="images">
+    <div class="main">
+      <%= picture(@service.pictures.first) %>
+    </div>
+    <div class="thumbs">
+      <% @service.pictures.each do |picture| %>
+        <%= link_to picture.file.url(), :class => :img do %>
+          <%= picture(picture, :small) %>
+        <% end%> 
+      <% end %>
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+    $('.images a.img').click(function(){
+      $('.images .main img').attr('src', $(this).attr('href'));
+      return false;
+    });
+  </script>
+<% end %>

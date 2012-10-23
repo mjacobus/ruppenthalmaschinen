@@ -20,11 +20,26 @@ breadcrumb.add(@product.name)
 </ul>
 
 
-<h2>Fotos</h2>
-<p>O tamanho das fotos estão em app/models/Picture.rb. Podem ser alteradas.</p>
-<ul>
-  <li>Peso: 1 quilo</li>
-  <li>Altura: 1 metro</li>
-  <li>x: Y</li>
-</ul>
-
+<% if @product.pictures %>
+  <h2>Fotos</h2>
+  
+  <div class="images">
+    <div class="main">
+      <%= picture(@product.pictures.first) %>
+    </div>
+    <div class="thumbs">
+      <% @product.pictures.each do |picture| %>
+        <%= link_to picture.file.url(), :class => :img do %>
+          <%= picture(picture, :small) %>
+        <% end%> 
+      <% end %>
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+    $('.images a.img').click(function(){
+      $('.images .main img').attr('src', $(this).attr('href'));
+      return false;
+    });
+  </script>
+<% end %>

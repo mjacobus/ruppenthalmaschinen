@@ -44,7 +44,7 @@
   <div data-id="post-15" data-type="<%= p.type.name %>" class="block" >
       <a href="<%= product_path(p) %>" title="<%= p.name %>" rel="prettyPhoto" class="img-border">
         <% if p.pictures.first %>
-          <%= image_tag p.pictures.first.file.url(:medium) %> 
+          <%= picture(p.pictures.first.file.url,:medium) %> 
         <% end %>
       </a>
       <h3 class="first-word">

@@ -7,6 +7,13 @@ breadcrumb.add("Serviços", "/servicos")
 <ul>
   <% @services.each do |s|%>
   <li>
+    
+    <a href="<%= service_path(s) %>" title="<%= s.title %>" rel="prettyPhoto" class="img-border">
+      <% if s.pictures.first %>
+        <%= picture(s.pictures.first,:medium) %> 
+      <% end %>
+    </a>
+    
     <%= s.title %>
     <p><%= s.description %></p>
     
