@@ -1,7 +1,7 @@
 class Service < ActiveRecord::Base
   has_many :pictures, :as => :imageable, :order => :sequence
   
-  attr_accessible :title, :description, :slug, :enabled
+  attr_accessible :title, :description, :slug, :enabled, :home
   
   
   validates :title, :presence => true, :uniqueness => {:case_sensitive => false}
@@ -17,6 +17,10 @@ class Service < ActiveRecord::Base
   
   def self.enabled
     where(:enabled => true)
+  end
+  
+  def self.on_home_page
+    where(:home => true)
   end
   
 end

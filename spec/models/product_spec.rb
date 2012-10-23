@@ -10,6 +10,7 @@ describe Product do
   it {should have_many(:features)}
   
   it { should allow_mass_assignment_of(:name) }
+  it { should allow_mass_assignment_of(:home) }
   it { should allow_mass_assignment_of(:application) }
   it { should allow_mass_assignment_of(:slug) }
   it { should allow_mass_assignment_of(:enabled) }
@@ -26,13 +27,25 @@ describe Product do
   
   describe ".enabled" do
     before do
-      @enabled = [Factory.create(:product, :enabled => true),
+      @expected = [Factory.create(:product, :enabled => true),
                   Factory.create(:product, :enabled => true)]
       Factory.create(:product, :enabled => false)
     end
     
     it "should only get enabled products" do
-      Product.enabled.should =~ @enabled
+      Product.enabled.should =~ @expected
+    end
+  end
+  
+  describe ".on_home_page" do
+    before do
+      @expected = [Factory.create(:product, :home => true),
+                  Factory.create(:product, :home => true)]
+      Factory.create(:product, :home => false)
+    end
+    
+    it "should only get enabled products" do
+      Product.on_home_page.should =~ @expected
     end
   end
 end

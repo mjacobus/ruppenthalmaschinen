@@ -10,6 +10,7 @@ describe Service do
   it { should allow_mass_assignment_of(:description) }
   it { should allow_mass_assignment_of(:slug) }
   it { should allow_mass_assignment_of(:enabled) }
+  it { should allow_mass_assignment_of(:home) }
   
   describe "#slug" do
     subject { Factory.build(:service, :title => 'A Title') }
@@ -26,6 +27,17 @@ describe Service do
     
     it "should get only enabled services" do
       Service.enabled.should =~ @enabled
+    end
+  end
+  
+  describe ".enabled" do
+    before do
+      @expected = [Factory.create(:service, :home => true)]
+      Factory.create(:service, :home => false)
+    end
+    
+    it "should get only enabled services" do
+      Service.on_home_page.should =~ @expected
     end
   end
 end

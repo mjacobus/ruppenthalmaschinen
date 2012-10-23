@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121021165634) do
+ActiveRecord::Schema.define(:version => 20121023122440) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20121021165634) do
     t.string   "slug"
     t.boolean  "enabled"
     t.integer  "category_id"
+    t.boolean  "home"
   end
 
   add_index "products", ["type_id"], :name => "index_products_on_type_id"
@@ -107,6 +108,7 @@ ActiveRecord::Schema.define(:version => 20121021165634) do
     t.boolean  "enabled"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.boolean  "home"
   end
 
 end

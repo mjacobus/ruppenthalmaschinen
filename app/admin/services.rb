@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 ActiveAdmin.register Service do
   index do
     column :picture do |service|
@@ -6,7 +8,17 @@ ActiveAdmin.register Service do
         img :src => picture.file.url(:thumb)
       end
     end
+    
     column :title
+    
+    column :home do |product|
+      product.home? ? 'Sim' : 'Não'
+    end
+    
+    column :enabled do |product|
+      product.enabled? ? 'Sim' : 'Não'
+    end
+    
     column :images do |service|
       link_to t(:manage), "/admin/services/#{service.id}/pictures"
     end

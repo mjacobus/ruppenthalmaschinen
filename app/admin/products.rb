@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 ActiveAdmin.register Product do
   index do
     column :picture do |product|
@@ -7,6 +9,12 @@ ActiveAdmin.register Product do
       end
     end
     column :name
+    column :home do |product|
+      product.home? ? 'Sim' : 'Não'
+    end
+    column :enabled do |product|
+      product.enabled? ? 'Sim' : 'Não'
+    end
     column :category
     column :features do |product|
       link_to t(:manage), "/admin/products/#{product.id}/features"

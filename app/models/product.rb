@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
   attr_accessible :application, :name, :slug,
-    :type_id, :enabled, :category_id
+    :type_id, :enabled, :category_id, :home
   
   has_many :pictures, :as => :imageable, :order => :sequence
   has_many :features, :order => :sequence
@@ -20,6 +20,10 @@ class Product < ActiveRecord::Base
   
   def self.enabled
     where(:enabled => true)
+  end
+  
+  def self.on_home_page
+    where(:home => true)
   end
   
 end

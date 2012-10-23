@@ -6,6 +6,7 @@ FactoryGirl.define do
     name { FactoryGirl.generate(:string) }
     application "MyText"
     association :type, :factory => :product_type
+    home false
     enabled true
   end
 end
