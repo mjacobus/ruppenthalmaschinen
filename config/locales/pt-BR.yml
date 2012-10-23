@@ -321,6 +321,8 @@
       type: Tipo
       picture: Foto
       feature: Especificação Técnica
+      contact: Contato
+      
     attributes:
       admin_user:
         current_sign_in_at: Login atual em
@@ -336,6 +338,7 @@
         sign_in_count: Número de logins
       service:
         title: Título
+        home: Exibir na Home
         description: Descrição
         images: Fotos
         picture: Foto
@@ -343,6 +346,19 @@
         created_at: Criado em
         updated_at: Atualizado em
         slug: Url
+      product:
+        name: Nome
+        home: Exibir na Home
+        application: Aplicação
+        images: Fotos
+        picture: Foto
+        enabled: Ativo
+        created_at: Criado em
+        updated_at: Atualizado em
+        slug: Url
+        type: Tipo
+        category: Categoria
+        features: Especificações Técnicas
       picture:
         title: Título
         description: Descrição
@@ -356,6 +372,31 @@
         name: Nome
         description: Descrição
         sequence: Ordem
-        
-        
+        slug: url
+        created_at: Criado em
+        updated_at: Atualizado em
+      contact:
+        name: Nome
+        message: Mensagem
+        subject: Assunto
+        created_at: Criado em
+        updated_at: Atualizado em
+        read: Lido
+      category:
+        name: Nome
+        slug: Url
+        created_at: Criado em
+        updated_at: Atualizado em
+        created_at: Criado em
+        updated_at: Atualizado em
+      feature:
+        name: Nome
+        value: Valor
+        sequence: Ordem
+        created_at: Criado em
+        updated_at: Atualizado em
   pictures: Fotos
+
+  messages:
+    contact:
+      success: "Mensagem enviada com sucesso. Assim que possível retoremos"

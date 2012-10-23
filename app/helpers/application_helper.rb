@@ -3,17 +3,17 @@ module ApplicationHelper
     html = ''
     
     unless @messages_already_shown
-      html += '<div id="messages">'
+      html += '<div class="messages">'
     
       if notice
-        html +=  '<p class="notice">' + notice + '<span class="close">x</span></p>'
+        html +=  '<p class="notice">' + notice + '</p>'
       end
       
       if alert
-        html +=  '<p class="alert">' + alert + '<span class="close">x</span></p>'
+        html +=  '<p class="alert">' + alert + '</p>'
       end
 
-      html += '</div><div class="messages"></div>'
+      html += '</div>'
       
       @messages_already_shown = true
     end
