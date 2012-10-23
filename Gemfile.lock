@@ -16,6 +16,12 @@ GIT
       sass (>= 3.1.0)
 
 GIT
+  remote: git://github.com/mjacobus/validates_email_format_of.git
+  revision: 46b832f7c778cc73f45ebc84cffba03c33294928
+  specs:
+    validates_email_format_of (1.5.3)
+
+GIT
   remote: git@github.com:mjacobus/Breadcrumb.git
   revision: 22fd17941188f0a51348710271e3a584a23601da
   specs:
@@ -237,3 +243,4 @@ DEPENDENCIES
   simple_menu!
   therubyracer
   uglifier (>= 1.0.3)
+  validates_email_format_of!

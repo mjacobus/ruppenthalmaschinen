@@ -32,6 +32,7 @@ gem "breadcrumb", :git => "git@github.com:mjacobus/Breadcrumb.git"
 
 gem "simple_menu", :git => "git@github.com:mjacobus/simple_menu.git"
 
+gem 'validates_email_format_of', :git => 'git://github.com/mjacobus/validates_email_format_of.git'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
