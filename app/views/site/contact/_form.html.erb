@@ -1,0 +1,12 @@
+<%= semantic_form_for(@contact) do |f|%>
+  <%= f.input :name, :input_html => {:class => 'input-field required', :wrapper_html => 'form-row-label'} %>
+  <%= f.input :email, :input_html => {:class => 'input-field required', :wrapper_html => 'form-row-label'} %>
+  <%= f.input :subject, :input_html => {:class => 'input-field required', :wrapper_html => 'form-row-label'} %>
+  <%= f.input :message, :input_html => {:class => 'input-field required', :wrapper_html => 'form-row-label'} %>
+  
+  <li>
+    <button type="submit" class="black border-radius-3px bold submit" title="">Enviar</button>
+  </li>
+<% end %>
+
+  

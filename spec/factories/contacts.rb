@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :contact do
     name "MyString"
-    email "MyString"
+    email "email@gmail.com"
     subject "MyString"
     message "MyText"
     read false

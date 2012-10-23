@@ -1,7 +1,5 @@
 Diego::Application.routes.draw do
   
-  get "static/about"
-
   ##############################################################################
   # site routes
   ##############################################################################
@@ -27,6 +25,10 @@ Diego::Application.routes.draw do
 
   # static
   get ":page.html" => "site/static#index", :as => :static
+  
+  # contact
+  get "/contato" => 'site/contact#new', :as => :contact
+  post "/contato(.:format)" => 'site/contact#create', :as => :contacts
 
   ##############################################################################
   # ative admin

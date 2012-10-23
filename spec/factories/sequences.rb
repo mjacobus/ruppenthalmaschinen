@@ -3,6 +3,10 @@ FactoryGirl.define do
     "string #{n}"
   end
   
+  sequence :email  do |n|
+    "email#{n}@gmail.com"
+  end
+  
   sequence :slug  do
     |n| "slug-#{n}"
   end

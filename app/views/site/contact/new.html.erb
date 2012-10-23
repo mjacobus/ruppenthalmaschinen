@@ -1,3 +1,7 @@
+<% breadcrumb.add('Contato')  %>
+
+<%= messages %>
+
 <!--Body content-->
 <div class="full-width-wrapper">
     <div class="fixed-width-wrapper" id="body-content">
@@ -72,52 +76,13 @@
                 </div>
                 <div class="clear">
                 </div>
-                <h3 class="first-word">Contact Form
-                </h3>
-                <div class="sp">
-                </div>
+                <h3 class="first-word">Contato</h3>
+                <div class="sp"></div>
                 <p>
-                    <em>Required fields are marked *
-                    </em>
+                    <em>Campos obrigatórios estão marcados com um *</em>
                 </p>
                 <!--Contact form-->
-                <form method="post" action="#" id="contact-form" class="maxx-form">
-                    <div class="form-row">
-                        <label class="form-row-label">Your name:
-                            <span class="star">*
-                            </span>
-                        </label>
-                        <input class="input-field required" style="width:400px" type="text" name="name">
-                    </div>
-                    <div class="form-row">
-                        <label class="form-row-label">E-mail:
-                            <span class="star">*
-                            </span>
-                        </label>
-                        <input class="input-field required email" style="width:400px" type="text" name="email">
-                    </div>
-                    <div class="form-row">
-                        <label class="form-row-label">Subject:
-                            <span class="star">*
-                            </span>
-                        </label>
-                        <input class="input-field required" style="width:400px" type="text" name="subject">
-                    </div>
-                    <div class="form-row">
-                        <label class="form-row-label">Message:
-                            <span class="star">*
-                            </span>
-                        </label>
-                        <textarea class="input-field required" style="width:400px" name="message" rows="5" cols="1" >
-                        </textarea>
-                    </div>
-                    <div class="form-row">
-                        <label class="form-row-label">�
-                        </label>
-                        <button type="submit" class="black border-radius-3px bold submit" title="">Send Message
-                        </button>
-                    </div>
-                </form>
+                <%= render 'form' %>
                 <!--/Contact form-->
             </div>
         </div>
@@ -163,33 +128,6 @@
             <!--/box-->
         </div>
         <!--/Sidebar-->
-        <!--Get in touch-->
-        <div id="get-in-touch" class="fixed-width-wrapper">
-            <div class="via-phone-number float-left">
-                <a class="icon sprite float-left" title="Keep in touch with us">Keep in touch with us
-                </a>
-                <h2>We can Help You. Call Us 
-                    <strong>+ 1 800 123 4567
-                    </strong>
-                </h2>
-                <span>Keep in touch with our news and receive NEWS
-                </span>
-            </div>
-            <div class="via-email float-right">
-                <form action="" method="post">
-                    <div>
-                        <input class="input-field border-radius-3px reset-text float-left" value="Enter your E-mail address...">
-                    </div>
-                    <div>
-                        <button type="submit" class="black border-radius-3px float-right">
-                            <em class="sprite">
-                            </em>Subcribe !
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <!--/Get in touch-->
     </div>
 </div>
 <!--/Body content-->
