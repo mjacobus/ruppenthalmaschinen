@@ -1,4 +1,3 @@
-<%= render :template => "site/header" %> 
 
 <!--Body content-->
         <div class="full-width-wrapper">
@@ -25,26 +24,19 @@
 <div class="portfolio-content three-column clear">
   
   
-  <ul class="portfolio-main filter">
-      <li class="active">
-          <a href="" title="">Todos os produtos
-          </a>
-      </li>
-      <li class="cat-item pecas">
-          <a href="" title="">Somente peças
-          </a>
-      </li>
-      <li class="cat-item maquinas">
-          <a href="" title="">Somente máquinas
-          </a>
-      </li>
-  </ul>
+  <div class="portfolio-main filter">
+    <% simple_menu('filter').active = params[:type] || :all %>
+    <% simple_menu('filter').add(:all,"Todos", products_path) %>
+    <% simple_menu('filter').add(:maquinas, 'Somente Máquinas', products_path(:maquinas)) %>
+    <% simple_menu('filter').add(:pecas, 'Somente Peças', products_path(:pecas)) %>
+    <%= raw simple_menu('filter') %>
+  </div>
   
   <% @products.each do |p|%>
   <div data-id="post-15" data-type="<%= p.type.name %>" class="block" >
       <a href="<%= product_path(p) %>" title="<%= p.name %>" rel="prettyPhoto" class="img-border">
         <% if p.pictures.first %>
-          <%= picture(p.pictures.first.file.url,:medium) %> 
+          <%= picture(p.pictures.first,:medium) %> 
         <% end %>
       </a>
       <h3 class="first-word">

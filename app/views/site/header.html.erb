@@ -1,91 +1,59 @@
 <div class="full-width-wrapper" id="header">
-            <div class="full-width-wrapper" id="abstract-bg">
-                <!--Banner-->
-                <div class="fixed-width-wrapper" id="banner">
-                    <a href="index.html" title="" class="logo">
-                        <img src="/assets/logo.png" alt="Maxx - The Modern HTML template">
-                    </a>
-              
-                </div>
-                <!--/Banner-->
-                <!--Navigation + Search-->
-                <div class="fixed-width-wrapper border-radius-5px" id="navigation-bar">
-                    <div id="g-navigation">
-                        <ul class="simple-drop-down-menu">
-                            <li class="home-page border-radius-left-5px">
-                                <a href="/">Home
-                                </a>
-                            </li>
-                            <li class="current">
-                                <a href="sobre-a-empresa.html" title="">Sobre a empresa
-                                </a>
-                            </li>
-                            <li>
-                                <a href="produtos.html" title="">Produtos
-                                </a>
-                                 <ul>
-                                    <li>
-                                        <a href="#" title="">Serviço Bala 1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="">Serviço Bala 2
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="">Serviço Bala 3
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="">Serviço Bala 4
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="servicos.html" title="">Serviços
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="#" title="">Serviço Bala 1
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="">Serviço Bala 2
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="">Serviço Bala 3
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" title="">Serviço Bala 4
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            
-                            
-                            <li>
-                                <a href="contato.html" title="">Contato
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="g-search">
-                        <form action="" method="post">
-                            <div>
-                                <input type="text" class="input-field border-radius-left-3px reset-text" value="Search here...">
-                            </div>
-                            <div>
-                                <button type="submit" title="Search" class="sprite">
-                                    <em>Search
-                                    </em>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!--/Navigation + Search-->
-            </div>
-        </div>
+  <div class="full-width-wrapper" id="abstract-bg">
+      <!--Banner-->
+      <div class="fixed-width-wrapper" id="banner">
+          <a href="index.html" title="" class="logo">
+              <img src="/assets/logo.png" alt="Maxx - The Modern HTML template">
+          </a>
+    
+      </div>
+      <!--/Banner-->
+      <!--Navigation + Search-->
+      <div class="fixed-width-wrapper border-radius-5px" id="navigation-bar">
+          <div id="g-navigation">
+              <ul class="simple-drop-down-menu">
+                  <li class="home-page border-radius-left-5px">
+                      <a href="/">Home</a>
+                  </li>
+                  <li class="current">
+                      <a href="<%= static_path('sobre-a-empresa') %>" title="">Sobre a empresa</a>
+                  </li>
+                  <li>
+                      <a href="<%= products_path() %> " title="">Produtos</a>
+                      <ul>
+                        <% home_products.each do |product| %>
+                          <li><%= link_to product.name, product_path(product) %></li>
+                        <% end %>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="<%= services_path() %> " title="">Serviços</a>
+                      <ul>
+                        <% home_services.each do |service| %>
+                          <li><%= link_to service.title, service_path(service) %></li>
+                        <% end %>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="/contato" title="">Contato</a>
+                  </li>
+              </ul>
+          </div>
+          <!--
+          <div id="g-search">
+              <form action="" method="post">
+                  <div>
+                      <input type="text" class="input-field border-radius-left-3px reset-text" value="Pesquise aqui...">
+                  </div>
+                  <div>
+                      <button type="submit" title="Pesquisar" class="sprite">
+                          <em>Pesquisar</em>
+                      </button>
+                  </div>
+              </form>
+          </div>
+      </div>
+      -->
+      <!--/Navigation + Search-->
+  </div>
+</div>

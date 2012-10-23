@@ -23,7 +23,7 @@
 </head>
 <body class="<%= params[:controller].parameterize %>_controller <%= params[:action].parameterize %>_action">
   
-  
+  <%= render :template => "site/header" %>
   <%= raw breadcrumb.prepend("Home","/") %>
   
   <div id="breadcrumb"></div>
