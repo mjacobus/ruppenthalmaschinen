@@ -1,3 +1,15 @@
+<%
+breadcrumb.add("Produtos", products_path)
+
+if params[:type] == 'maquinas'
+  breadcrumb.add("Máquinas")  
+end
+
+if params[:type] == 'pecas'
+  breadcrumb.add("Peças")  
+end
+
+%>
 
 <!--Body content-->
         <div class="full-width-wrapper">
@@ -54,92 +66,44 @@
   <% end %>
 </div>
   
-<!--Pagination-->
-<div class="clear">
-</div>
-<div class="page-pagination clear fixed-width-wrapper">
-    <a href="#" title="">Prev
-    </a>
-    <a href="#" title="">1
-    </a>
-    <a href="#" title="" class="current">2
-    </a>
-    <a href="#" title="">3
-    </a>
-    <a href="#" title="">4
-    </a>
-    <a href="#" title="">5
-    </a>
-    <span>...
-    </span>
-    <a href="#" title="">15
-    </a>
-    <a href="#" title="">Next
-    </a>
-</div>
-<!--/Pagination-->
-  
-  <%= paginate(@products) %>
+    <!--Pagination-->
+    <div class="clear">
+    </div>
+    <div class="page-pagination clear fixed-width-wrapper">
+        <a href="#" title="">Prev
+        </a>
+        <a href="#" title="">1
+        </a>
+        <a href="#" title="" class="current">2
+        </a>
+        <a href="#" title="">3
+        </a>
+        <a href="#" title="">4
+        </a>
+        <a href="#" title="">5
+        </a>
+        <span>...
+        </span>
+        <a href="#" title="">15
+        </a>
+        <a href="#" title="">Next
+        </a>
+    </div>
+    
+    <!--/Pagination-->
+      <div class="page-pagination clear fixed-width-wrapper">  
+        <%= paginate(@products) %>
+      </div>
   
   </div>
 </div>
-                <!--/Content-->
-                <!--Get in touch-->
-                <div id="get-in-touch" class="fixed-width-wrapper">
-                    <div class="via-phone-number float-left">
-                        <a class="icon sprite float-left" title="Keep in touch with us">Keep in touch with us
-                        </a>
-                        <h2>We can Help You. Call Us 
-                            <strong>+ 1 800 123 4567
-                            </strong>
-                        </h2>
-                        <span>Keep in touch with our news and receive NEWS
-                        </span>
-                    </div>
-                    <div class="via-email float-right">
-                        <form action="" method="post">
-                            <div>
-                                <input class="input-field border-radius-3px reset-text float-left" value="Enter your E-mail address...">
-                            </div>
-                            <div>
-                                <button type="submit" class="black border-radius-3px float-right">
-                                    <em class="sprite">
-                                    </em>Subcribe !
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!--/Get in touch-->
-            </div>
-        </div>
+        <!--/Content-->
         
-        <!--/Body content-->
-        <!--Footer Extra-->
-        <div class="full-width-wrapper" id="footer-extra-wrapper">
-            <div class="fixed-width-wrapper">
-                <div id="copyright">
-                    <a href="#" class="logo float-left" title="">
-                        <img src="/assets/logo-footer.png" alt="" >
-                    </a>
-                    <ul>
-                        <li>(c) 2011 Allright reservred 
-                        </li>
-                        <li>
-                            <a href="#" title="">Privacy Policy
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" title="">Terms and Conditions
-                            </a>
-                        </li>
-                    </ul>
-                    <a href="#" class="back-to-top sprite" title="Back to top">Back to top
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!--/Footer Extra-->
+    </div>
+</div>
+
+<!--/Body content-->
+
   
   
 
