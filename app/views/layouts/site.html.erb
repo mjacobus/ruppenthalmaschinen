@@ -3,13 +3,7 @@
 <head>
   <title><%= content_for?(:title) ? content_for(:title) : breadcrumb.titleize %></title>
     <%= stylesheet_link_tag    "site", :media => "all" %>
-    
-    <%= javascript_include_tag "jquery" %>
-    <%= javascript_include_tag "jquery.nivo.slider" %>
-    <%= javascript_include_tag "scripts" %>
-    <%= javascript_include_tag "custom" %>
-    <%= javascript_include_tag "shortcode" %>
-    
+    <%= javascript_include_tag "site" %>
     <%= csrf_meta_tags %>
     <%= ganalytics %>
   </head>
