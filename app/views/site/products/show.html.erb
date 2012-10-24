@@ -1,6 +1,8 @@
 <%
-breadcrumb.add("Produtos", "/produtos")
-breadcrumb.add(@product.type.name, product_type_path(@product.type.slug))
+simple_menu.active = :products
+
+breadcrumb.add("Produtos", products_path)
+breadcrumb.add(@product.type.name.pluralize, product_type_path(@product.type.slug))
 breadcrumb.add(@product.name)
 %>
 

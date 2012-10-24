@@ -1,3 +1,4 @@
+
 <div class="full-width-wrapper" id="header">
   <div class="full-width-wrapper" id="abstract-bg">
       <!--Banner-->
@@ -12,30 +13,30 @@
       <div class="fixed-width-wrapper border-radius-5px" id="navigation-bar">
           <div id="g-navigation">
               <ul class="simple-drop-down-menu">
-                  <li class="home-page border-radius-left-5px">
+                  <li class="home-page border-radius-left-5px <%= 'current' if simple_menu.active == :home %>">
                       <a href="/">Home</a>
                   </li>
-                  <li class="current">
+                  <li class="<%= 'current' if simple_menu.active == :about %>">
                       <a href="<%= static_path('sobre-a-empresa') %>" title="">Sobre a empresa</a>
                   </li>
-                  <li>
-                      <a href="<%= products_path() %> " title="">Produtos</a>
+                  <li class="<%= 'current' if simple_menu.active == :products %>">
+                      <a href="<%= products_path() %>" title="">Produtos</a>
                       <ul>
                         <% home_products.each do |product| %>
-                          <li><%= link_to product.name, product_path(product) %></li>
+                          <li class="<%= 'current' if product == @product %>"><%= link_to product.name, product_path(product) %></li>
                         <% end %>
                       </ul>
                   </li>
-                  <li>
-                      <a href="<%= services_path() %> " title="">Serviços</a>
+                  <li class="<%= 'current' if simple_menu.active == :services %>">
+                      <a href="<%= services_path() %>" title="">Serviços</a>
                       <ul>
                         <% home_services.each do |service| %>
-                          <li><%= link_to service.title, service_path(service) %></li>
+                          <li class="<%= 'current' if service == @service %>"><%= link_to service.title, service_path(service) %></li>
                         <% end %>
                       </ul>
                   </li>
-                  <li>
-                      <a href="/contato" title="">Contato</a>
+                  <li class="<%= 'current' if simple_menu.active == :contact %>">
+                      <a href="<%= contacts_path() %>" title="">Contato</a>
                   </li>
               </ul>
           </div>
