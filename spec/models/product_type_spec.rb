@@ -17,4 +17,17 @@ describe ProductType do
     its(:name) {should == 'A Title'}
     its(:slug) {should == 'a-title'}
   end
+  
+  it {should have_many(:products)}
+  
+  it "should not be destroyed when has products" do
+    Factory(:product, :type => Factory(:product_type)).type.destroy.should be_false
+  end
+  
+  it "should not be destroyed when has no products" do
+    type = Factory(:product_type)
+    lambda {
+      type.destroy  
+    }.should change(ProductType,:count).by(-1)
+  end
 end
