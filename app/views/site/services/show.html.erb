@@ -2,35 +2,106 @@
 breadcrumb.add("Serviços", "/servicos")
 breadcrumb.add(@service.title)
 %>
-
-<h1><%= @service.title %></h1>
-
-<ul>
-  <li>Descrição: <%= @service.description %></li>
-</ul>
-
-
-
-<% unless @service.pictures.empty? %>
-  <h2>Fotos</h2>
   
-  <div class="images">
-    <div class="main">
-      <%= picture(@service.pictures.first) %>
-    </div>
-    <div class="thumbs">
-      <% @service.pictures.each do |picture| %>
-        <%= link_to picture.file.url(), :class => :img do %>
-          <%= picture(picture, :small) %>
-        <% end%> 
-      <% end %>
-    </div>
-  </div>
   
-  <script type="text/javascript">
-    $('.images a.img').click(function(){
-      $('.images .main img').attr('src', $(this).attr('href'));
-      return false;
-    });
-  </script>
-<% end %>
+<%= render :template => "site/header" %> 
+
+ <div class="full-width-wrapper">
+            <div class="fixed-width-wrapper" id="body-content">
+                <!--Content-->
+                <div id="content" class="float-left content-left">
+                    <div class="header-text">
+                        <h1 class="first-word double-color sp"><%= @service.title %></h1>
+                    </div>
+                    <div class="post entry-content">
+                      <h2>Fotos</h2> 
+                      <p><%= @service.description %></p>
+                      <% unless @service.pictures.empty? %>
+                        <h2>Fotos</h2>
+                        <div class="images">
+                          <div class="main">
+                            <%= picture(@service.pictures.first) %>
+                          </div>
+                          <div class="thumbs">
+                            <% @service.pictures.each do |picture| %>
+                              <%= link_to picture.file.url(), :class => :img do %>
+                                <%= picture(picture, :small) %>
+                              <% end%> 
+                            <% end %>
+                          </div>
+                        </div>
+                        
+                        <script type="text/javascript">
+                          $('.images a.img').click(function(){
+                            $('.images .main img').attr('src', $(this).attr('href'));
+                            return false;
+                          });
+                        </script>
+                      <% end %>
+                    </div>
+                </div>
+                <!--/Content-->
+                <!--Sidebar-->
+                <div id="sidebar" class="float-right">
+                    <!--box-->
+                    <div class="box">
+                        <h1 class="first-word double-color sp">O que dizem sobre nós</h1>
+                        <ul class="list quote">
+                            <li>
+                                <span class="quote">
+                                </span>
+                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur, nibh ut feugiat placerat, orci lacus accumsan erat, eget porttitor arcu velit a lacus."
+                                </p>
+                                <a href="#">
+                                    <strong>John Doe
+                                    </strong> - 
+                                    <b>MaxxD Co.,Ltd
+                                    </b>
+                                </a>
+                            </li>
+                            <li>
+                                <span class="quote">
+                                </span>
+                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur, nibh ut feugiat placerat, orci lacus accumsan erat, eget porttitor arcu velit a lacus."
+                                </p>
+                                <a href="#">
+                                    <strong>John Doe
+                                    </strong> - 
+                                    <b>MaxxD Co.,Ltd
+                                    </b>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/box-->
+                    <!--box-->
+                    <div class="box">
+                        <h1 class="first-word double-color sp">Mais a nosso respeito</h1>
+                        <ul class="list cat">
+                            <li>
+                                <a href="#" title="">Lorem ipsum dolor sit amet consectetur </a>
+                            </li>
+                            <li class="current">
+                                <a href="#" title="">Praesent ultricies urna a urna</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">Quisque metus enim, venenatis</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">Nullam ven tincidunt dolor consectetur </a>
+                            </li>
+                            <li>
+                                <a href="#" title="">Lorem ipsum dolor sit amet consectetur </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/box-->
+                </div>
+                <!--/Sidebar-->
+            </div>
+        </div>
+        <!--/Body content-->
+        <!--Footer Extra-->
+       
+       
+       

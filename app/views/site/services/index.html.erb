@@ -2,24 +2,152 @@
 breadcrumb.add("Serviços", "/servicos")
 %>
 
-<h1>Serviços</h1>
+  <%= paginate(@services) %>
 
-<ul>
+  
+  
+<%= render :template => "site/header" %> 
+
+<!--Body content-->
+        <div class="full-width-wrapper">
+            <div class="fixed-width-wrapper" id="body-content">
+                <!--Content-->
+                <div id="content" class="fixed-width-wrapper">
+                    <div class="header-text">
+                        <ul id="breadcrumbs">
+                            <li>
+                                <a href="#" title="">Home
+                                </a>
+                            </li>
+                            <li class="current">
+                                <a href="#" title="">Serviços
+                                </a>
+                            </li>
+                        </ul>
+                        <h1 class="first-word double-color sp">Serviços
+                        </h1>
+                    </div>
+
+<div class="portfolio">
+
+<div class="portfolio-content three-column clear">
+  
+  
+  
   <% @services.each do |s|%>
-  <li>
-    
-    <a href="<%= service_path(s) %>" title="<%= s.title %>" rel="prettyPhoto" class="img-border">
-      <% if s.pictures.first %>
-        <%= picture(s.pictures.first,:medium) %> 
-      <% end %>
-    </a>
-    
-    <%= s.title %>
-    <p><%= s.description %></p>
-    
-    <%= link_to "Ver", service_path(s) %>
-  </li>
+  <div class="block" >
+      <a href="<%=  service_path(s) %>" title="<%= s.title %>" rel="prettyPhoto" class="img-border">
+        <% if s.pictures.first %>
+          <%= image_tag s.pictures.first.file.url(:medium) %> 
+        <% end %>
+      </a>
+      <h3 class="first-word">
+        <a href="<%=  service_path(s) %>" title="Read more">
+          <%= s.title %>
+        </a>
+      </h3>
+      <p><%= s.description %></p>
+      <a class="read-more" href="<%=  service_path(s) %>" title="Read more">
+       Ver detalhe
+      </a>
+      <div class="sp">
+      </div>
+  </div>
   <% end %>
-<ul>
+</div>
+  
+<!--Pagination-->
+<div class="clear">
+</div>
+<div class="page-pagination clear fixed-width-wrapper">
+    <a href="#" title="">Prev
+    </a>
+    <a href="#" title="">1
+    </a>
+    <a href="#" title="" class="current">2
+    </a>
+    <a href="#" title="">3
+    </a>
+    <a href="#" title="">4
+    </a>
+    <a href="#" title="">5
+    </a>
+    <span>...
+    </span>
+    <a href="#" title="">15
+    </a>
+    <a href="#" title="">Next
+    </a>
+</div>
+<!--/Pagination-->
   
   <%= paginate(@services) %>
+  
+  </div>
+</div>
+                <!--/Content-->
+                <!--Get in touch-->
+                <div id="get-in-touch" class="fixed-width-wrapper">
+                    <div class="via-phone-number float-left">
+                        <a class="icon sprite float-left" title="Keep in touch with us">Keep in touch with us
+                        </a>
+                        <h2>We can Help You. Call Us 
+                            <strong>+ 1 800 123 4567
+                            </strong>
+                        </h2>
+                        <span>Keep in touch with our news and receive NEWS
+                        </span>
+                    </div>
+                    <div class="via-email float-right">
+                        <form action="" method="post">
+                            <div>
+                                <input class="input-field border-radius-3px reset-text float-left" value="Enter your E-mail address...">
+                            </div>
+                            <div>
+                                <button type="submit" class="black border-radius-3px float-right">
+                                    <em class="sprite">
+                                    </em>Subcribe !
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!--/Get in touch-->
+            </div>
+        </div>
+        
+        <!--/Body content-->
+        <!--Footer Extra-->
+        <div class="full-width-wrapper" id="footer-extra-wrapper">
+            <div class="fixed-width-wrapper">
+                <div id="copyright">
+                    <a href="#" class="logo float-left" title="">
+                        <img src="/assets/logo-footer.png" alt="" >
+                    </a>
+                    <ul>
+                        <li>(c) 2011 Allright reservred 
+                        </li>
+                        <li>
+                            <a href="#" title="">Privacy Policy
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="">Terms and Conditions
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#" class="back-to-top sprite" title="Back to top">Back to top
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--/Footer Extra-->
+  
+  
+
+  
+  
+  
+  
+  
+  
