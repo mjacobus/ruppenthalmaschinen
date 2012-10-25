@@ -16,3 +16,8 @@
 public/system
 coverage
 public/assets
+
+# pages that get cached
+index.html
+produtos
+servicos

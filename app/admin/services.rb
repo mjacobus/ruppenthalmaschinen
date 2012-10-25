@@ -1,6 +1,11 @@
 # encoding: UTF-8
 
 ActiveAdmin.register Service do
+  
+  controller do
+    cache_sweeper :service_sweeper
+  end
+  
   index do
     column :picture do |service|
       picture = service.pictures.first

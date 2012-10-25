@@ -1,6 +1,11 @@
 # encoding: UTF-8
 
 ActiveAdmin.register Product do
+  
+  controller do
+    cache_sweeper :product_sweeper
+  end
+  
   index do
     column :picture do |product|
       picture = product.pictures.first
