@@ -4,7 +4,8 @@ describe Site::HomeHelper do
   describe "#products" do
     it "should get home flagged products" do
       object = stub('return')
-      Product.should_receive(:on_home_page).and_return(object)
+      Product.should_receive(:enabled).and_return(object)
+      object.should_receive(:on_home_page).and_return(object)
       helper.home_products.should eq(object)
     end
   end
@@ -12,7 +13,8 @@ describe Site::HomeHelper do
   describe "#services" do
     it "should get home flagged services" do
       object = stub('return')
-      Service.should_receive(:on_home_page).and_return(object)
+      Service.should_receive(:enabled).and_return(object)
+      object.should_receive(:on_home_page).and_return(object)
       helper.home_services.should eq(object)
     end
   end
