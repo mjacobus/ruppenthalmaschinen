@@ -1,6 +1,8 @@
 # encoding: UTF-8
 
 class Site::ServicesController < SiteController
+  caches_page :index, :show
+  
   respond_to :html
   
   def index

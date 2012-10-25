@@ -18,5 +18,6 @@ class ServiceSweeper < ActionController::Caching::Sweeper
     expire_page(:controller => 'site/home', :action => 'index')
  
     FileUtils.rm_rf "#{Rails.public_path}/servicos"
+    FileUtils.rm_rf "#{Rails.public_path}/servicos.html"
   end
 end

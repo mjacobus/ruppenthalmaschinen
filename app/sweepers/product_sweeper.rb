@@ -20,7 +20,9 @@ class ProductSweeper < ActionController::Caching::Sweeper
   def expire_cache_for(product)
     # Expire the index page now that we added a new product
     expire_page(:controller => 'site/home', :action => 'index')
+    
  
     FileUtils.rm_rf "#{Rails.public_path}/produtos"
+    FileUtils.rm_rf "#{Rails.public_path}/produtos.html"
   end
 end
