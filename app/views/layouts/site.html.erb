@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= content_for?(:title) ? content_for(:title) : breadcrumb.titleize %></title>
+  <title>Ruppenthal Maschinen | <%= content_for?(:title) ? content_for(:title) : breadcrumb.titleize %></title>
+
+  <link href="/assets/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
     <%= stylesheet_link_tag    "site", :media => "all" %>
     <%= javascript_include_tag "site" %>
     <%= csrf_meta_tags %>
@@ -18,21 +21,51 @@
   
   <div id="view_container"><%= yield %></div>
   
-  <!--Footer Extra-->
-    <div class="full-width-wrapper" id="footer-extra-wrapper">
-        <div class="fixed-width-wrapper">
-            <div id="copyright">
-                <a href="#" class="logo float-left" title="">
-                    <img src="/assets/logo-footer.png" alt="">
-                </a>
-                <ul>
-                    <li>(r) 2012 Marca Registrada</li>
-                </ul>
-                <a href="#" class="back-to-top sprite" title="Back to top">Topo</a>
+   <!--Get in touch-->
+                <div id="get-in-touch" class="fixed-width-wrapper">
+                    <div class="via-phone-number float-left">
+                        <h2>Fale conosco por telefone: 
+                            <strong>51 3566 8992
+                            </strong>
+                        </h2>
+                        <span>Ou <a href="/contato" title="">mande um e-mail</a> para solicitar o nosso contato. 
+                        </span>
+                    </div>
+                    
+                </div>
+                <!--/Get in touch-->
+        <!--Footer Extra-->
+        <div class="full-width-wrapper" id="footer-extra-wrapper">
+            <div class="fixed-width-wrapper">
+                <div id="copyright">
+                    <a href="#" class="logo float-left" title="">
+                        <img src="/assets/logo-footer.png" alt="">
+                    </a>
+                    <ul>
+                        <li>&copy; 2012 Todos os direitos reservados 
+                        </li>
+                        <li class="home-page border-radius-left-5px ">
+                          <a href="/">Home</a>
+                        </li>
+                        <li class="">
+                            <a href="/sobre-a-empresa.html" title="">Sobre a empresa</a>
+                        </li>
+                        <li class="">
+                            <a href="/produtos" title="">Produtos</a>
+                        </li>
+                        <li class="">
+                            <a href="/servicos" title="">Serviços</a>
+                        </li>
+                        <li class="">
+                            <a href="/contato" title="">Contato</a>
+                        </li>
+                    </ul>
+                    <a href="#" class="back-to-top sprite" title="Back to top">Voltar ao topo
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-    <!--/Footer Extra-->
+        <!--/Footer Extra-->
 
   </body>
 </html>

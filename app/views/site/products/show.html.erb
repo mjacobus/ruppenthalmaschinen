@@ -6,42 +6,98 @@ breadcrumb.add(@product.type.name.pluralize, product_type_path(@product.type.slu
 breadcrumb.add(@product.name)
 %>
 
-<h1><%= @product.name %></h1>
-
-<ul>
-  <li>Tipo: <%= @product.type.name %></li>
-  <li>Applicação: <%= @product.application %></li>
-</ul>
-
-<h2>Especificações técnicas</h2>
-
-<ul>
-<% @product.features.each do |feature| %>
-  <li><%= feature.name %>: <%= feature.value %></li>
-<% end %>
-</ul>
 
 
-<% if @product.pictures %>
-  <h2>Fotos</h2>
+
+
+
+
+
+
+
   
-  <div class="images">
-    <div class="main">
-      <%= picture(@product.pictures.first) %>
-    </div>
-    <div class="thumbs">
-      <% @product.pictures.each do |picture| %>
-        <%= link_to picture.file.url(), :class => :img do %>
-          <%= picture(picture, :small) %>
-        <% end%> 
-      <% end %>
-    </div>
-  </div>
-  
-  <script type="text/javascript">
-    $('.images a.img').click(function(){
-      $('.images .main img').attr('src', $(this).attr('href'));
-      return false;
-    });
-  </script>
-<% end %>
+____________
+
+
+<div class="full-width-wrapper">
+            <div class="fixed-width-wrapper" id="body-content">
+                <!--Content-->
+                <div id="content" class="float-left content-left">
+                    <div class="header-text">
+                        <h1 class="first-word double-color sp"><%= @product.name %></h1>
+                    </div>
+                    <div class="post entry-content">
+                      <h2>Sobre o produto</h2>
+                      <p>
+                        <strong>Tipo:</strong> <%= @product.type.name %><br/>
+                        <strong>Applicação:</strong> <%= @product.application %>
+                      </p>
+                      <h2>Especificações técnicas</h2>
+                      <ul>
+                      <% @product.features.each do |feature| %>
+                        <li><strong><%= feature.name %>:</strong> <%= feature.value %></li>
+                      <% end %>
+                      </ul>
+                      <% if @product.pictures %>
+                      <h2>Fotos</h2>
+                      
+                      <div class="images">
+                        <div class="main">
+                          <%= picture(@product.pictures.first) %>
+                        </div>
+                        <div class="thumbs">
+                          <% @product.pictures.each do |picture| %>
+                            <%= link_to picture.file.url(), :class => :img do %>
+                              <%= picture(picture, :small) %>
+                            <% end%> 
+                          <% end %>
+                        </div>
+                      </div>
+
+                      <script type="text/javascript">
+                        $('.images a.img').click(function(){
+                          $('.images .main img').attr('src', $(this).attr('href'));
+                          return false;
+                        });
+                      </script>
+                    <% end %>
+                    </div>
+                </div>
+                <!--/Content-->
+                <!--Sidebar-->
+                <div id="sidebar" class="float-right">
+                    
+                    <!--box-->
+                    <div class="box">
+                        <h1 class="first-word double-color sp">Outros serviços</h1>
+                        <ul class="list cat">
+                            <li>
+                                <a href="#" title="">Lorem ipsum dolor sit amet consectetur </a>
+                            </li>
+                            <li class="current">
+                                <a href="#" title="">Praesent ultricies urna a urna</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">Quisque metus enim, venenatis</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">Nullam ven tincidunt dolor consectetur </a>
+                            </li>
+                            <li>
+                                <a href="#" title="">Lorem ipsum dolor sit amet consectetur </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/box-->
+                </div>
+                <!--/Sidebar-->
+            </div>
+        </div>
+        <!--/Body content-->
+        <!--Footer Extra-->
+
+___________-
+
+
+
+
