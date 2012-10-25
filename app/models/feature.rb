@@ -1,5 +1,5 @@
 class Feature < ActiveRecord::Base
-  belongs_to :product
+  belongs_to :product, :touch => true
   attr_accessible :name, :value, :product_id, :sequence
   
   validates :name,

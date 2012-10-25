@@ -1,6 +1,8 @@
 # encoding: UTF-8
 
 class Site::ProductsController < SiteController
+  caches_page :show
+  
   respond_to :html
   
   # /produtos(/:page)

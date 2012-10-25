@@ -1,4 +1,9 @@
 ActiveAdmin.register Picture do
+  
+  controller do
+    cache_sweeper :picture_sweeper
+  end
+  
   menu false
   config.clear_sidebar_sections!
    
