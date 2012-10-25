@@ -53,13 +53,11 @@ ActiveAdmin.register Product do
       f.input :category
       f.input :name
       f.input :application
+      f.input :video, :tip => "haaa"
       f.input :enabled
       f.input :home
     end
     
-    
-      f.actions
-    
-    
+    f.actions
   end
 end
