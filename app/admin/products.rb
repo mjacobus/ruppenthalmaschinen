@@ -46,4 +46,20 @@ ActiveAdmin.register Product do
       li link_to t(:manage), "/admin/products/#{product.id}/pictures"
     end
   end
+  
+  form do |f|
+    f.inputs do
+      f.input :type
+      f.input :category
+      f.input :name
+      f.input :application
+      f.input :enabled
+      f.input :home
+    end
+    
+    
+      f.actions
+    
+    
+  end
 end
