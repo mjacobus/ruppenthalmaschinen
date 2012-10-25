@@ -36,7 +36,7 @@ ActiveAdmin.register Product do
       li link_to t(:manage), "/admin/products/#{product.id}/features"
     end
   end
-
+  
   sidebar I18n.t(:pictures), :except => [:index, :new] do
     ul do
       product.pictures.each do |picture|
@@ -47,13 +47,19 @@ ActiveAdmin.register Product do
     end
   end
   
+  sidebar I18n.t(:video), :except => [:index, :new] do
+    if product.video
+      link_to "Vídeo", "http://www.youtube.com/watch?v=#{product.video}"
+    end
+  end
+  
   form do |f|
     f.inputs do
       f.input :type
       f.input :category
       f.input :name
       f.input :application
-      f.input :video, :tip => "haaa"
+      f.input :video, :hint => raw("O código do youtube: http://www.youtube.com/watch?v=<strong>YBrTccemsOc</strong>")
       f.input :enabled
       f.input :home
     end
