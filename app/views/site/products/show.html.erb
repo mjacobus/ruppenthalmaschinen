@@ -1,9 +1,6 @@
 <%
 simple_menu.active = :products
 
-breadcrumb.add("Produtos", products_path)
-breadcrumb.add(@product.type.name.pluralize, product_type_path(@product.type.slug))
-breadcrumb.add(@product.name)
 %>
 
 <div class="full-width-wrapper">
@@ -11,6 +8,7 @@ breadcrumb.add(@product.name)
                 <!--Content-->
                 <div id="content" class="float-left content-left">
                     <div class="header-text">
+                         <%= raw breadcrumb.add("Home", "/").add("Produtos", products_path).add(@product.name) %>
                         <h1 class="first-word double-color sp"><%= @product.name %></h1>
                     </div>
                     <div class="post entry-content">
