@@ -7,7 +7,7 @@ set :application, "test.ruppenthalmaschinen.com.br"
 set :user, 'marceloadmin'
 set :deploy_to, "/webapps/#{application}"
 set :domain, "www.ruppenthalmaschinen.com.br"
-after 'deploy:update_code', 'deploy:symlink_db'
+after 'deploy:update_code', 'deploy:symlink_db','deploy:symlink_email_config'
 
 
 default_run_options[:pty] = true
@@ -45,6 +45,13 @@ namespace :deploy do
   desc "Symlinks the database.yml"
   task :symlink_db, :roles => :app do
     run "ln -nfs #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+  end
+end
+
+namespace :deploy do
+  desc "Symlinks email.yml"
+  task :symlink_email_config, :roles => :app do
+    run "ln -nfs #{deploy_to}/shared/config/email.yml #{release_path}/config/email.yml"
   end
 end
 
