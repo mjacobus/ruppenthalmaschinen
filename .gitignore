@@ -21,3 +21,4 @@ public/assets
 index.html
 produtos
 servicos
+config/email.yml
