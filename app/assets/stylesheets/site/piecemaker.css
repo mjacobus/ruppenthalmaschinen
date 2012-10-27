@@ -1,5 +1,13 @@
 /* CSS Document */
 
+#new_contact input[type="text"], #new_contact input[type="email"], #new_contact textarea{width: 300px; float: left;}
+#new_contact textarea{height: 100px;}
+label.label{display: block;width: 100px; text-align: right;margin: 8px 20px 0px 0px;float: left;}
+.formrow{width: 100%; padding-bottom: 20px; overflow: hidden;}
+.first.address p{float: left; width: 264px; margin-right:  42px;}
+.inline-errors{color: #e4624d; padding: 2px 0px 2px 120px; width: 300px;float: left;margin: 0px!important;}
+
+
 H1 {
 	font-family: Verdana;
 	font-style: bold;
@@ -45,5 +53,4 @@ A {
 
 A:HOVER {
 	color: #111111;
-	display: inline;
 }

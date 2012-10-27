@@ -3,7 +3,7 @@
 /*Short Code*/
 blockquote{
 	padding:10px 10px 10px 20px;
-	border-left:5px solid #C41D23;
+	border-left:5px solid #4da2e4;
 	border-bottom:1px solid #e6e6e6;
 	border-right:1px solid #FFF;
 	border-top:1px solid #FFF;
@@ -152,7 +152,7 @@ span.quote{
 }
 
 .m-simple-accordion dt.active,.m-simple-toggle dt.active{
-	color:#C41D23;
+	color:#4da2e4;
 	
 }
 .m-simple-accordion dt .sign,.m-simple-toggle dt .sign{
@@ -235,7 +235,7 @@ span.quote{
 }
 
 .m-simple-tabs dt.active{
-	color:#C41D23;
+	color:#4da2e4;
 	background:#fafafa;
 	box-shadow:inset 1px 1px 0 #FFF,inset -1px 0 0 #FFF;
 	-moz-box-shadow:inset 1px 1px 0 #FFF,inset -1px 0 0 #FFF;

@@ -1,14 +1,19 @@
-<% breadcrumb.add('Contato')  %>
 <% simple_menu.active = :contact %>
 <%= messages %>
 
 <!--Body content-->
-<div class="full-width-wrapper">
+<div class="full-width-wrapper" style="padding-bottom: 100px;">
     <div class="fixed-width-wrapper" id="body-content">
       
         <!--Content-->
         <div id="content" class="float-left content-left">
+            <div class="header-text">
+                        
+        <%= raw breadcrumb.add("Home","/").add("Contato") %>
             <h1 class="first-word double-color sp">Contato</h1>
+            </div>
+            
+            
             <div class="post entry-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nibh mi, commodo eu, pellentesque ut, blandit rutrum, ligula. 
                     <strong>Praesent ultricies urna a urna.
@@ -20,8 +25,10 @@
                     <strong>Sed nec diam
                     </strong>. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
                 </p>
-                <div class="first one-half address">
-                    <h3 class="first-word">Endereço</h3>
+                <div class="first address">
+                    <h3 class="first-word">
+                        <strong>Endereço</strong>
+                    </h3>
                     <span class="map-point"></span>
                     <p>
                         <strong>MaxxD Co.,ltd</strong>

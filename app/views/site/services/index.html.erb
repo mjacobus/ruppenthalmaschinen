@@ -1,26 +1,15 @@
 <%
 simple_menu.active = :services
-breadcrumb.add("Serviços")
 %>
-
-  
 <!--Body content-->
 <div class="full-width-wrapper">
     <div class="fixed-width-wrapper" id="body-content">
         <!--Content-->
         <div id="content" class="fixed-width-wrapper">
             <div class="header-text">
-                <ul id="breadcrumbs">
-                    <li>
-                        <a href="#" title="">Home
-                        </a>
-                    </li>
-                    <li class="current">
-                        <a href="#" title="">Serviços
-                        </a>
-                    </li>
-                </ul>
-                <h1 class="first-word double-color sp">Serviços
+                <%= raw breadcrumb.add("Home","/").add("Serviços") %>
+                <h1 class="first-word double-color sp">
+                    <strong>Serviços</strong>
                 </h1>
             </div>
 

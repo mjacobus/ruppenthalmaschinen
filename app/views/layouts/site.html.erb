@@ -13,26 +13,27 @@
   <body class="<%= params[:controller].parameterize %>_controller <%= params[:action].parameterize %>_action">
   
   <%= render :template => "site/header" %>
-  <%= raw breadcrumb.prepend("Home","/") %>
   
-  <div id="breadcrumb"></div>
   
   <%= messages %>
   
   <div id="view_container"><%= yield %></div>
   
    <!--Get in touch-->
-                <div id="get-in-touch" class="fixed-width-wrapper">
-                    <div class="via-phone-number float-left">
-                        <h2>Fale conosco por telefone: 
-                            <strong>51 3566 8992
-                            </strong>
-                        </h2>
-                        <span>Ou <a href="/contato" title="">mande um e-mail</a> para solicitar o nosso contato. 
-                        </span>
-                    </div>
-                    
-                </div>
+   <% unless params[:controller] == 'site/contact' %>
+        <div id="get-in-touch" class="fixed-width-wrapper">
+            <div class="via-phone-number float-left">
+                <a title="Keep in touch with us" class="icon sprite float-left">Keep in touch with us</a>
+                <h2>Fale conosco por telefone: 
+                    <strong>51 3566 8992
+                    </strong>
+                </h2>
+                <span>Ou <a href="/contato" title="">mande um e-mail</a> para solicitar o nosso contato. 
+                </span>
+            </div>
+            
+        </div>
+    <% end %>
                 <!--/Get in touch-->
         <!--Footer Extra-->
         <div class="full-width-wrapper" id="footer-extra-wrapper">

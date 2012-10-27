@@ -1,7 +1,6 @@
 <%
 simple_menu.active = :products
 
-breadcrumb.add("Produtos", products_path)
 
 if params[:type] == 'maquinas'
   breadcrumb.add("Máquinas")  
@@ -19,16 +18,7 @@ end
                 <!--Content-->
                 <div id="content" class="fixed-width-wrapper">
                     <div class="header-text">
-                        <ul id="breadcrumbs">
-                            <li>
-                                <a href="#" title="">Home
-                                </a>
-                            </li>
-                            <li class="current">
-                                <a href="#" title="">Produtos
-                                </a>
-                            </li>
-                        </ul>
+                        <%= raw breadcrumb.add("Home","/").add("Produtos") %>
                         <h1 class="first-word double-color sp">Produtos
                         </h1>
                     </div>

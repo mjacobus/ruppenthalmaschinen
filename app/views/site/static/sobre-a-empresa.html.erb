@@ -1,21 +1,27 @@
 <%
   simple_menu.active = :about
-  breadcrumb.add('Sobre a Empresa')
 %>
 
         <!--/Header-->
         <!--Body content-->
         <div class="full-width-wrapper">
             <div class="fixed-width-wrapper" id="body-content">
+                
                 <!--Content-->
                 <div id="content" class="float-left content-left">
+                    
                     <div class="header-text">
+                        
+                    
+                        <%= raw breadcrumb.add("Home","/").add("Sobre a Empresa") %>
+               
+                        
                         <h1 class="first-word double-color sp">Sobre a Empresa</h1>
                     </div>
                     <div class="post entry-content">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nibh mi, commodo eu, pellentesque ut, blandit rutrum, ligula. Praesent ultricies urna a urna. Quisque massa. Cras ipsum diam, hendrerit id, accumsan sit amet, fermentum vel, dui.
                         </p>
-                        <a href="/assets/pix/about-1.jpg" class="preloading-light img-border clear" rel="prettyPhoto" title="">
+                        <a href="/assets/pix/slide1.jpg" class="preloading-light img-border clear" rel="prettyPhoto" title="">
                             <img src="/assets/pix/about-1.jpg" alt="Lorem ipsum dolor si amet">
                         </a>
                         <p>Nulla sagittis convallis arcu. Sed sed nunc. Curabitur consequat. Quisque metus enim, venenatis fermentum, mollis in, porta et, nibh. 
