@@ -11,6 +11,7 @@ class Site::ContactController < SiteController
     
     if @contact.save
       # send an email
+      AppMailer.contact_email(@contact).deliver
       
       unless request.xhr?
         flash[:notice] = t('messages.contact.success')

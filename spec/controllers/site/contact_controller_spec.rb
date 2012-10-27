@@ -12,7 +12,7 @@ describe Site::ContactController, "create" do
   context "with valid data" do
     before do
       Contact.delete_all
-      put :create, {:contact => Factory.attributes_for(:contact) }
+      post :create, {:contact => Factory.attributes_for(:contact) }
     end
     
     it { should assign_to(:contact) }
@@ -23,7 +23,9 @@ describe Site::ContactController, "create" do
       Contact.count.should eq(1)  
     end
     
-    it "should send an email"
+    it "should send an email" do
+      ActionMailer::Base.deliveries.should_not be_empty
+    end
      
   end
   
@@ -37,7 +39,10 @@ describe Site::ContactController, "create" do
       assigns(:contact).errors.should_not be_empty
     end
     
-    it "should not send an email"
+    it "should not send an email" do
+      post :create, {}
+      AppMailer.should_not_receive(:contact_email)
+    end
   end
   
 end
