@@ -9,11 +9,20 @@
         <div id="content" class="float-left content-left">
             <div class="header-text">
                         
-        <%= raw breadcrumb.add("Home","/").add("Contato") %>
-            <h1 class="first-word double-color sp">Contato</h1>
+               <%= raw breadcrumb.add("Home","/").add("Contato") %>
+              <h1 class="first-word double-color sp">Contato</h1>
             </div>
             
+            <div class="form">
+              <p>
+                  <em>Campos obrigatórios estão marcados com um *</em>
+              </p>
+              <!--Contact form-->
+              <%= render 'form' %>
+              <!--/Contact form-->
+            </div>
             
+            <div class="sp"></div>
             <div class="post entry-content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nibh mi, commodo eu, pellentesque ut, blandit rutrum, ligula. 
                     <strong>Praesent ultricies urna a urna.
@@ -47,14 +56,7 @@
                 </div>
                 
                 <div class="clear"></div>
-                <h3 class="first-word">Contato</h3>
-                <div class="sp"></div>
-                <p>
-                    <em>Campos obrigatórios estão marcados com um *</em>
-                </p>
-                <!--Contact form-->
-                <%= render 'form' %>
-                <!--/Contact form-->
+                
             </div>
         </div>
         <!--/Content-->

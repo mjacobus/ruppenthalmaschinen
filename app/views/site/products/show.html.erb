@@ -26,12 +26,9 @@ simple_menu.active = :products
               <li><strong><%= feature.name %>:</strong> <%= feature.value %></li>
             <% end %>
             </ul>
-            <% if @product.pictures %>
-            <h2>Fotos</h2>
-            
-            <div class="images">
-              
-              <% if @product.pictures.length > 1 %>
+            <% if @product.pictures && @product.pictures.length > 1%>
+              <h2>Fotos</h2>
+              <div class="images">
                 <div class="thumbs">
                   <% @product.pictures.each do |picture| %>
                     <%= link_to picture.file.url(:medium), :class => :img do %>
@@ -39,16 +36,15 @@ simple_menu.active = :products
                     <% end%> 
                   <% end %>
                 </div>
-              <% end %>
-            </div>
-
-            <script type="text/javascript">
-              $('.images a.img').click(function(){
-                $('.images.main img').attr('src', $(this).attr('href'));
-                return false;
-              });
-            </script>
-          <% end %>
+              </div>
+  
+              <script type="text/javascript">
+                $('.images a.img').click(function(){
+                  $('.images.main img').attr('src', $(this).attr('href'));
+                  return false;
+                });
+              </script>
+            <% end %>
           </div>
           
           <% if @product.video %>
