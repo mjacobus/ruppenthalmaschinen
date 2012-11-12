@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   belongs_to :type, :class_name => :ProductType
   belongs_to :category
   belongs_to :parent, :class_name => :Product
-  has_many :products, :foreign_key => :parent_id
+  has_many :products, :foreign_key => :parent_id, :order => :classification_id
   belongs_to :classification
   
   
