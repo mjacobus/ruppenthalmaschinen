@@ -9,6 +9,8 @@ describe Product do
   it {should belong_to(:category)}
   it {should have_many(:pictures)}
   it {should have_many(:features)}
+  it {should have_many(:products)}
+  it {should belong_to(:parent).class_name(Product)}
   
   it { should allow_mass_assignment_of(:name) }
   it { should allow_mass_assignment_of(:home) }
@@ -18,6 +20,7 @@ describe Product do
   it { should allow_mass_assignment_of(:enabled) }
   it { should allow_mass_assignment_of(:type_id) }
   it { should allow_mass_assignment_of(:category_id) }
+  it { should allow_mass_assignment_of(:parent_id) }
   
   
   describe "#slug" do
@@ -49,5 +52,9 @@ describe Product do
     it "should only get enabled products" do
       Product.on_home_page.should =~ @expected
     end
+  end
+  
+  describe "#parent" do
+    it "should be nil if is not machine"
   end
 end

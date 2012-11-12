@@ -321,8 +321,7 @@
       type: Tipo
       picture: Foto
       feature: Especificação Técnica
-      contact: Contato
-      
+      contact: Contato    
     attributes:
       admin_user:
         current_sign_in_at: Login atual em
@@ -347,6 +346,7 @@
         updated_at: Atualizado em
         slug: Url
       product:
+        parent: Máquina
         name: Nome
         home: Exibir na Home
         application: Aplicação
@@ -396,6 +396,9 @@
         created_at: Criado em
         updated_at: Atualizado em
   pictures: Fotos
+  video: Vídeo
+  pieces: Peças de Reposição
+  if_machine: Caso este produto seja uma peça de reposição, indique a máquiana que este pertence
 
   messages:
     contact:

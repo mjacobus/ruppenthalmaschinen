@@ -52,6 +52,14 @@ ActiveAdmin.register Product do
     end
   end
   
+  sidebar I18n.t(:pieces), :except => [:index, :new] do
+    ul do
+      product.products.each do |p|
+        li link_to(p.name,[:admin,p])
+      end
+    end
+  end
+  
   sidebar I18n.t(:video), :except => [:index, :new] do
     if product.video
       link_to "Vídeo", "http://www.youtube.com/watch?v=#{product.video}"
@@ -61,6 +69,7 @@ ActiveAdmin.register Product do
   form do |f|
     f.inputs do
       f.input :type
+      f.input :parent, :hint => t(:if_machine)
       f.input :category
       f.input :name
       f.input :application
