@@ -19,20 +19,10 @@
                       <a href="<%= static_path('sobre-a-empresa') %>" title="">Sobre a empresa</a>
                   </li>
                   <li class="<%= 'current' if simple_menu.active == :products %>">
-                      <a href="<%= products_path() %>" title="">Produtos</a>
-                      <ul>
-                        <% home_products.each do |product| %>
-                          <li class="<%= 'current' if product == @product %>"><%= link_to product.name, product_path(product) %></li>
-                        <% end %>
-                      </ul>
+                    <a href="<%= products_path() %>" title="">Produtos</a>
                   </li>
                   <li class="<%= 'current' if simple_menu.active == :services %>">
-                      <a href="<%= services_path() %>" title="">Serviços</a>
-                      <ul>
-                        <% home_services.each do |service| %>
-                          <li class="<%= 'current' if service == @service %>"><%= link_to service.title, service_path(service) %></li>
-                        <% end %>
-                      </ul>
+                    <a href="<%= services_path() %>" title="">Serviços</a>
                   </li>
                   <li class="<%= 'current' if simple_menu.active == :contact %>">
                       <a href="<%= contacts_path() %>" title="">Contato</a>
