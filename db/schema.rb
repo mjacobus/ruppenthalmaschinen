@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121112011356) do
+ActiveRecord::Schema.define(:version => 20121112015945) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(:version => 20121112011356) do
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.string   "slug"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "classifications", :force => true do |t|
+    t.string   "name"
+    t.integer  "sequence"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -101,16 +108,18 @@ ActiveRecord::Schema.define(:version => 20121112011356) do
     t.string   "name"
     t.text     "application"
     t.integer  "type_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "slug"
     t.boolean  "enabled"
     t.integer  "category_id"
     t.boolean  "home"
     t.string   "video"
     t.integer  "parent_id"
+    t.integer  "classification_id"
   end
 
+  add_index "products", ["classification_id"], :name => "index_products_on_classification_id"
   add_index "products", ["type_id"], :name => "index_products_on_type_id"
 
   create_table "services", :force => true do |t|

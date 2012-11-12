@@ -321,7 +321,8 @@
       type: Tipo
       picture: Foto
       feature: Especificação Técnica
-      contact: Contato    
+      contact: Contato
+      classification: Classificação
     attributes:
       admin_user:
         current_sign_in_at: Login atual em
@@ -392,6 +393,11 @@
       feature:
         name: Nome
         value: Valor
+        sequence: Ordem
+        created_at: Criado em
+        updated_at: Atualizado em
+      classification:
+        name: Nome
         sequence: Ordem
         created_at: Criado em
         updated_at: Atualizado em
