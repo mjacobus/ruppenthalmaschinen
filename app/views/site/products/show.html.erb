@@ -13,6 +13,9 @@ simple_menu.active = :products
           </div>
           <div class="post entry-content">
             <h2>Sobre o produto</h2>
+              <div class="images main">
+                <%= picture(@product.pictures.first, :medium) %>
+              </div>
             <p>
               <strong>Tipo:</strong> <%= @product.type.name %><br/>
               <strong>Applicação:</strong> <%= @product.application %>
@@ -27,21 +30,21 @@ simple_menu.active = :products
             <h2>Fotos</h2>
             
             <div class="images">
-              <div class="main">
-                <%= picture(@product.pictures.first) %>
-              </div>
-              <div class="thumbs">
-                <% @product.pictures.each do |picture| %>
-                  <%= link_to picture.file.url(), :class => :img do %>
-                    <%= picture(picture, :small) %>
-                  <% end%> 
-                <% end %>
-              </div>
+              
+              <% if @product.pictures.length > 1 %>
+                <div class="thumbs">
+                  <% @product.pictures.each do |picture| %>
+                    <%= link_to picture.file.url(:medium), :class => :img do %>
+                      <%= picture(picture, :small) %>
+                    <% end%> 
+                  <% end %>
+                </div>
+              <% end %>
             </div>
 
             <script type="text/javascript">
               $('.images a.img').click(function(){
-                $('.images .main img').attr('src', $(this).attr('href'));
+                $('.images.main img').attr('src', $(this).attr('href'));
                 return false;
               });
             </script>
