@@ -70,6 +70,7 @@ ActiveAdmin.register Product do
     f.inputs do
       f.input :type
       f.input :parent, :hint => t(:if_machine)
+      f.input :classification
       f.input :category
       f.input :name
       f.input :application

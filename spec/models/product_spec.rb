@@ -7,6 +7,7 @@ describe Product do
   it {should validate_presence_of(:application)}
   it {should belong_to(:type).class_name(ProductType)}
   it {should belong_to(:category)}
+  it {should belong_to(:classification)}
   it {should have_many(:pictures)}
   it {should have_many(:features)}
   it {should have_many(:products)}
@@ -21,6 +22,7 @@ describe Product do
   it { should allow_mass_assignment_of(:type_id) }
   it { should allow_mass_assignment_of(:category_id) }
   it { should allow_mass_assignment_of(:parent_id) }
+  it { should allow_mass_assignment_of(:classification_id) }
   
   
   describe "#slug" do
@@ -28,6 +30,15 @@ describe Product do
     it {should be_valid}
     its(:name) {should == 'A Title'}
     its(:slug) {should == 'a-title'}
+  end
+  
+  describe "#parent" do
+    it "should be nil if is not machine"
+  end
+  
+  describe "#classification" do
+    it "should be required if has parent"
+    it "should be nil if does not have parent"
   end
   
   describe ".enabled" do
@@ -53,8 +64,5 @@ describe Product do
       Product.on_home_page.should =~ @expected
     end
   end
-  
-  describe "#parent" do
-    it "should be nil if is not machine"
-  end
 end
+  
