@@ -29,10 +29,14 @@ end
   
   
   <div class="portfolio-main filter">
-    <% simple_menu('filter').active = params[:type] || :all %>
-    <% simple_menu('filter').add(:all,"Todos", products_path) %>
-    <% simple_menu('filter').add(:maquinas, 'Somente Máquinas', products_path(:maquinas)) %>
-    <% simple_menu('filter').add(:pecas, 'Somente Peças', products_path(:pecas)) %>
+    <%
+      simple_menu('filter').active = params[:category] || :all
+      simple_menu('filter').add(:all,"Todos", products_path)
+      
+      Category.all.each do |category|
+        simple_menu('filter').add(category.slug, category.name, product_category_path(category.slug))
+      end
+    %>
     <%= raw simple_menu('filter') %>
   </div>
   

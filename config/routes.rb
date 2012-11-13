@@ -10,10 +10,10 @@ Diego::Application.routes.draw do
   get "/produtos(/:page)" => "site/products#index",
     :constraints => {:page => /\d{1,}/}, :as => :products
     
-  get "/produtos/:type(/:page)" => "site/products#index",
-    :constraints => {:page => /\d{1,}/}, :as => :product_type
+  get "/produtos/:category(/:page)" => "site/products#index",
+    :constraints => {:page => /\d{1,}/}, :as => :product_category
     
-  get "/produtos/:type/:product" => "site/products#show", :as => :product
+  get "/produtos/:category/:product" => "site/products#show", :as => :product
   
   
   # site/services controller

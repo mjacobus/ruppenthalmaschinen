@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe Site::ProductsController, "#show" do
   def show(product = Factory.create(:product), options = {})
-    get :show, {:type => product.type.slug, :product => product.slug}.merge(options)
+    get :show, {:category => product.category.slug, :product => product.slug}.merge(options)
     product
   end
   
@@ -60,7 +60,7 @@ describe Site::ProductsController, "#index" do
 
   describe "with type" do
     it "should query for specify type" do
-      get :index, :type => @product.type.slug
+      get :index, :category => @product.category.slug
       assigns(:products).should eq([@product])
     end
   end

@@ -13,20 +13,20 @@ describe Site::ProductsController, "routing" do
   end
   
   it "should route to #index" do
-    {:get => "/produtos/maquinas"}.should route_to("site/products#index",
-      :type => 'maquinas')
+    {:get => "/produtos/automotivo"}.should route_to("site/products#index",
+      :category => 'automotivo')
   end
   
   it "should route to #index {:page => '5'}" do
-    {:get => "/produtos/maquinas/5"}.should route_to("site/products#index",
-      :type => 'maquinas',
+    {:get => "/produtos/automotivo/5"}.should route_to("site/products#index",
+      :category => 'automotivo',
       :page => '5')
   end
   
   it "should route to #show" do
-    {:get => "/produtos/maquinas/maquina-de-chinfrar"}.should route_to(
+    {:get => "/produtos/automotivo/maquina-de-chinfrar"}.should route_to(
       "site/products#show",
-      :type => 'maquinas',
+      :category => 'automotivo',
       :product => 'maquina-de-chinfrar'
     )
   end

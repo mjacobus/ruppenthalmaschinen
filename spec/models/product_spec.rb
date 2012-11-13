@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Product do
   it {should validate_presence_of(:name)}
   it {should validate_presence_of(:type)}
+  it {should validate_presence_of(:category)}
   it {should validate_uniqueness_of(:name).case_insensitive}
   it {should validate_presence_of(:application)}
   it {should belong_to(:type).class_name(ProductType)}

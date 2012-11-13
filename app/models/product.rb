@@ -17,6 +17,7 @@ class Product < ActiveRecord::Base
     :uniqueness => {:case_sensitive => false}
     
   validates :application, :presence => true
+  validates :category, :presence => true
   
   def name=(new_name)
     super(new_name)

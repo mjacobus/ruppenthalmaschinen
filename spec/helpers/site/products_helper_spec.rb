@@ -6,7 +6,7 @@ describe Site::ProductsHelper do
     it "gets the correct product path" do
       product = stub_model(Product,
                   :slug => 'product-name',
-                  :type => stub_model(ProductType, :slug => 'type'))
+                  :category => stub_model(Category, :slug => 'type'))
       
       helper.product_path(product).should eq('/produtos/type/product-name')
     end
