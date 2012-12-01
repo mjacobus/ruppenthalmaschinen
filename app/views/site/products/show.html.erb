@@ -12,10 +12,14 @@ simple_menu.active = :products
             <h1 class="first-word double-color sp"><%= @product.name %></h1>
           </div>
           <div class="post entry-content">
-            <h2>Sobre o produto</h2>
+           
+              
+            <div class="topproduct">
               <div class="images main">
                 <%= picture(@product.pictures.first, :medium) %>
               </div>
+            
+               <h2>Sobre o produto</h2>
             <p>
               <strong>Tipo:</strong> <%= @product.type.name %><br/>
               <strong>Applicação:</strong> <%= @product.application %>
@@ -26,6 +30,12 @@ simple_menu.active = :products
               <li><strong><%= feature.name %>:</strong> <%= feature.value %></li>
             <% end %>
             </ul>
+
+          </div>
+
+
+
+
             <% if @product.pictures && @product.pictures.length > 1%>
               <h2>Fotos</h2>
               <div class="images">
@@ -66,7 +76,8 @@ simple_menu.active = :products
         <div id="sidebar" class="float-right">
           <!--box-->
           <div class="box">
-            <h2 class="first-word double-color sp">Peças de Reposição</h2>
+            <h2 class="first-word double-color sp">Peças 
+              de Reposição</h2>
             <ul class="list cat">
             <% classification_id = nil %>
             <% @product.products.each do |product| %>
