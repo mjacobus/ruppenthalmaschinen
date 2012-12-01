@@ -4,7 +4,7 @@ module Site::PicturesHelper
       options.merge({:alt => picture.title, :title => picture.title})
       image_tag(picture.file.url(size), options)
     else
-      image_tag("default_#{size}.jpg")
+      image_tag("default_#{size}.jpg", options)
     end
   end
 end
