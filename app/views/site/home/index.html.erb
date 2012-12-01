@@ -15,15 +15,15 @@
                     </a>
                     <div class="clear">
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        <a href="#" class="tipMe" title="This is a tooltip">This is a tooltip 
-                        </a>, nibh ut feugiat placerat, orci lacus accumsan erat, eget porttitor arcu velit a lacus.
-                    </p>
-                    <p>Sed tempus bibendum risus, nec dignissim sem vestibulum ut. Nam iaculis aliquam elementum. Nunc sed dignissim sapien. 
-                    </p>
+                    <p>A RUPPENTHAL & RUPPENTHAL 
+                        é uma empresa do ramo metalúrgico
+                        que têm suas atividades direcionadas
+                        para construção mecânica de máquinas
+                        e equipamentos para a indústria. Fundada em 2011 está
+                        localizada no importante pólo industrial do Vale do Sinos
+                        em Novo Hamburgo/RS.
                 </div>
-                <a class="read-more" href="#" title="Read more">Read more
-                </a>
+                <a class="read-more" href="<%= static_path('sobre-a-empresa') %> " title="Saba Mais">Saiba Mais</a>
             </div>
             <!--/block-->
             <!--block-->
@@ -33,7 +33,7 @@
                     <ul class="zigzag list">
                       <% align = 'align-left' %>
                       <% home_products.each do |product|%>
-                        <% align = align == 'align-left' ? 'align-right' : 'align-left' %>
+                        <% align = (align == 'align-left') ? 'align-right' : 'align-left' %>
                         <li>
                           <%= picture(product.pictures.first, :thumb, {:class => align }) %>
                           <strong><%= product.name %></strong>
@@ -43,15 +43,17 @@
                       <% end %>
                     </ul>
                 </div>
-                <%=  link_to "detalhes", products_path, :class => 'read-more', :title => 'Ler mais' %>
-                </a>
+                <%=  link_to "detalhes", products_path, :class => 'read-more', :title => 'Saiba mais' %>
             </div>
             <!--/block-->
             <!--block-->
             <div class="block type3">
                 <h1 class="first-word double-color">Nossos serviços</h1>
                 <div class="content">
-                    <p>Nullam vel tincidunt ligula. Donec ligula mauris, vehicula quis feugiat at, consequat ut velit. Praesent vestibulum orci vitae nibh cursus vulputate. Donec aliquam laoreet commodo. Praesent vestibulum orci vitae nibh.
+                    <p>A empresa apresenta soluções em projetos e construção de equipamentos
+                    baseado na otimização e na eficiência de funcionamento destes,
+                    em como na automação e racionalização do processo, sempre buscando a racionalização
+                    de mão de obra, aumento de produtividade e economia de recursos.
                     </p>
                     <ul class="list point">
                       <% counter = 0 %>
