@@ -21,7 +21,7 @@ simple_menu.active = :services
               
               <% @services.each do |s|%>
               <div class="block" >
-                  <a href="<%=  service_path(s) %>" title="<%= s.title %>" rel="prettyPhoto" class="img-border">
+                  <a href="<%=  service_path(s) %>" title="<%= s.title %>" class="img-border">
                     <%= picture(s.pictures.first, :medium) %> 
                   </a>
                   <h3 class="first-word">

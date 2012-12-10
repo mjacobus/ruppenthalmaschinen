@@ -10,8 +10,8 @@
             <div class="block type1">
                 <h1 class="first-word double-color">Quem somos?</h1>
                 <div class="content">
-                    <a href="#" title="" class="preloading-light img-border align-none">
-                        <img src="/assets/pix/slide1.jpg" width="280" alt="">
+                    <a href="/sobre-a-empresa.html" title="RUPPENTHAL & RUPPENTHAL" class="preloading-light img-border align-none">
+                        <img src="/assets/pix/slide1-min.jpg" width="280" alt="RUPPENTHAL & RUPPENTHAL">
                     </a>
                     <div class="clear">
                     </div>
@@ -37,7 +37,7 @@
                         <li>
                           <%= picture(product.pictures.first, :thumb, {:class => align }) %>
                           <strong><%= product.name %></strong>
-                          <span><%= product.application %></span>
+                          <span><%= product.application %></span>&nbsp;&nbsp;
                           <%=  link_to "detalhes", product_path(product)%>
                         </li>
                       <% end %>
