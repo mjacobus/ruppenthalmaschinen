@@ -408,4 +408,4 @@
 
   messages:
     contact:
-      success: "Mensagem enviada com sucesso. Assim que possível retoremos"
+      success: "Mensagem enviada com sucesso. Assim que possível retornaremos"
