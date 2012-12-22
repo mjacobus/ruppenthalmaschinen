@@ -1,5 +1,6 @@
-//= //= require jquery
-//= //= require jquery.nivo.slider
-//= //= require scripts
-//= //= require custom
-//= //= require shortcode
+//= require jquery
+//= require jquery.nivo.slider
+//= require scripts
+//= require custom
+//= require shortcode
+//= require site/products

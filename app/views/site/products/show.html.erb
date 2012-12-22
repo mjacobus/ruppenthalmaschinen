@@ -76,16 +76,16 @@ simple_menu.active = :products
         <div id="sidebar" class="float-right">
           <!--box-->
           <div class="box">
-            <h2 class="first-word double-color sp">Peças 
-              de Reposição</h2>
+            <h2 class="first-word double-color sp">Veja 
+              as peças de reposição</h2>
             <ul class="list cat">
             <% classification_id = nil %>
             <% @product.products.each do |product| %>
               <% if classification_id != product.classification_id %>
                 <% classification_id = product.classification_id %>
-                <li class="title"><%= product.classification.name %></li>
+                <li class="title" data-hide="<%= product.classification.name.parameterize %>"><%= product.classification.name %></li>
               <% end %>  
-              <li>
+              <li class="toggable <%= product.classification.name.parameterize %>">
                   <%= link_to(product.name,product_path(product))  %>
               </li>
             <% end %>
