@@ -57,7 +57,7 @@ simple_menu.active = :products
             <% end %>
           </div>
           
-          <% if @product.video %>
+          <% if @product.video && !@product.video.empty? %>
           <h2>Veja um vídeo deste produto</h2>
           <div id="home">
             <iframe width="420"

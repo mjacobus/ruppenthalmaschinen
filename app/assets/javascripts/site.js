@@ -4,3 +4,4 @@
 //= require custom
 //= require shortcode
 //= require site/products
+//= require site/home

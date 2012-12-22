@@ -6,6 +6,12 @@
     <div class="fixed-width-wrapper body-divider " id="body-content">
         <!--Entry-->
         <div class="entry three-column fixed-width-wrapper">
+            <div id="home-banner">
+              <div class="banner" style="background: red; width: 100%; height: 100%; float:left;"></div>
+              <div class="banner" style="background: blue; width: 100%; height: 100%; float:left;"></div>
+              <div class="banner" style="background: green; width: 100%; height: 100%; float:left;"></div>
+            </div>
+          
             <!--block-->
             <div class="block type1">
                 <h1 class="first-word double-color">Quem somos?</h1>
@@ -26,50 +32,37 @@
                 <a class="read-more" href="<%= static_path('sobre-a-empresa') %> " title="Saba Mais">Saiba Mais</a>
             </div>
             <!--/block-->
+            
             <!--block-->
-            <div class="block type2">
-                <h1 class="first-word double-color">Produtos</h1>
-                <div class="content">
-                    <ul class="zigzag list">
-                      <% align = 'align-left' %>
-                      <% home_products.each do |product|%>
-                        <% align = (align == 'align-left') ? 'align-right' : 'align-left' %>
-                        <li>
-                          <%= picture(product.pictures.first, :thumb, {:class => align }) %>
-                          <strong><%= product.name %></strong>
-                          <span><%= product.application %></span>&nbsp;&nbsp;
-                          <%=  link_to "detalhes", product_path(product)%>
-                        </li>
-                      <% end %>
-                    </ul>
-                </div>
-                <%=  link_to "detalhes", products_path, :class => 'read-more', :title => 'Saiba mais' %>
+            <div class="float-right">
+                <%= home_video %>
             </div>
             <!--/block-->
+            
+            
             <!--block-->
-            <div class="block type3">
-                <h1 class="first-word double-color">Nossos serviços</h1>
-                <div class="content">
-                    <p>A empresa apresenta soluções em projetos e construção de equipamentos
-                    baseado na otimização e na eficiência de funcionamento destes,
-                    em como na automação e racionalização do processo, sempre buscando a racionalização
-                    de mão de obra, aumento de produtividade e economia de recursos.
-                    </p>
-                    <ul class="list point">
-                      <% counter = 0 %>
-                      <% home_services.each do |service|%>
-                        <% counter += 1 %>
-                        <li>
-                          <%=  link_to  service_path(service) do %>
-                            <em><%= counter %></em><%= service.title %>
-                          <% end %>
-                        </li>
+            
+            <session class="home-products">
+              <header><h1 class="first-word double-color">Produtos</h1></header>
+              
+              <% home_products.each do |product|%>
+                <article>
+                    <header>
+                      <%= link_to product_path(product) do %>
+                        <%= picture(product.pictures.first, :thumb) %>
+                      <% end %>  
+                      
+                      <%= link_to product_path(product) do %>
+                        <h2><%= product.name %></h2>
                       <% end %>
-                    </ul>
-                </div>
-                <%=  link_to "detalhes", services_path, :class => 'read-more', :title => 'Ler mais' %>
-                </a>
-            </div>
+                    </header>
+                  <%= link_to product_path(product) do %>  
+                    <p><%= product.application %></p>
+                  <% end %>
+                </article>
+              <% end %>
+              
+            </session>
             <!--/block-->
         </div>
         <!--/Entry-->
