@@ -8,8 +8,8 @@ module Site::HomeHelper
   end
   
   def home_video
-    video = home_products.where('video IS NOT NULL AND video != ""').first.video
-    if video
+    product = home_products.where('video IS NOT NULL AND video != ""').first
+    unless product.nil? || product.video.nil? || product.video.empty?
       content_tag('iframe',nil,{
         :width => 420,
         :height => 315,
