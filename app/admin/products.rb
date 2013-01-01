@@ -1,6 +1,7 @@
 # encoding: UTF-8
 
 ActiveAdmin.register Product do
+  menu parent: Product.model_name.human, priority: 1
   
   controller do
     cache_sweeper :product_sweeper
