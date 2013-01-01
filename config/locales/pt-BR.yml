@@ -323,19 +323,21 @@
       feature: Especificação Técnica
       contact: Contato
       classification: Classificação
+      snippet: Conteúdo
     attributes:
       admin_user:
+        encrypted_password: Senha criptografada
         current_sign_in_at: Login atual em
         last_sign_in_at: Último login em
         current_sign_in_ip: Ip do login atual
         last_sign_in_ip: Ip do último login
-        created_at: Criado em
-        updated_at: Atualizado em
         encripted_password: Senha criptografada
         reset_password_token: Token de redefinição de senha
         reset_password_sent_at: Token de redefinição enviado em
         remember_created_at: '"Lembre me" criado em'
         sign_in_count: Número de logins
+        created_at: Criado em
+        updated_at: Atualizado em
       service:
         title: Título
         home: Exibir na Home
@@ -343,9 +345,9 @@
         images: Fotos
         picture: Foto
         enabled: Ativo
+        slug: Url
         created_at: Criado em
         updated_at: Atualizado em
-        slug: Url
       product:
         parent: Máquina
         name: Nome
@@ -354,12 +356,12 @@
         images: Fotos
         picture: Foto
         enabled: Ativo
-        created_at: Criado em
-        updated_at: Atualizado em
         slug: Url
         type: Tipo
         category: Categoria
         features: Especificações Técnicas
+        created_at: Criado em
+        updated_at: Atualizado em
       picture:
         title: Título
         description: Descrição
@@ -380,9 +382,9 @@
         name: Nome
         message: Mensagem
         subject: Assunto
+        read: Lido
         created_at: Criado em
         updated_at: Atualizado em
-        read: Lido
       category:
         name: Nome
         slug: Url
@@ -401,6 +403,10 @@
         sequence: Ordem
         created_at: Criado em
         updated_at: Atualizado em
+      snippet:
+        title: Título
+        slug: Identificação
+        content: Conteúdo
   pictures: Fotos
   video: Vídeo
   pieces: Peças de Reposição
