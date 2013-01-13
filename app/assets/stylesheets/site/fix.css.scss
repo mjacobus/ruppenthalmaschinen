@@ -8,7 +8,7 @@ h1 {
 
 #banner .logo img{
   width: 296px;
-  
+
 }
 
 .simple-drop-down-menu {
@@ -23,7 +23,7 @@ ul.simple-drop-down-menu {
     text-align: left;
     width: 100px;
   }
-  
+
   a{
     width: 157px;
     text-align: center;
@@ -43,13 +43,13 @@ ul.simple-drop-down-menu li.current {
     font-size: 15px;
     margin-top: 10px;
   }
-  
+
   .title:hover {
     color: #2A80B2;
   }
-  
+
   li.toggable {
-    display: none;  
+    display: none;
   }
 }
 
@@ -59,18 +59,18 @@ ul.simple-drop-down-menu li.current {
   height: 200px;
   width: 100%;
   overflow: hidden;
-  
+
   li {
     float: left;
   }
-  
+
 }
 
 .span6 {
   width: 45%;
   float: left;
   font-size: 12px;
-  
+
   &.left{ margin-right: 5% }
   &.right{ margin-left: 5% }
 
@@ -78,12 +78,12 @@ ul.simple-drop-down-menu li.current {
     margin-bottom: 20px;
     float: left;
     width: 100%;
-    
+
     img {
       float: left;
       margin: 0 10px 5px 0;
     }
-    
+
     h2 {
       float: left;
       width: 310px;
@@ -93,7 +93,7 @@ ul.simple-drop-down-menu li.current {
       font-family: Tahoma,Verdana,Arial,sans-serif;
       font-weight: bold;
     }
-    
+
     p {
       text-align: justify;
     }
@@ -134,13 +134,13 @@ ul.simple-drop-down-menu li.current {
 }
 
 #navigation-bar {
-  width: 100%;
+  //width: 100%;
   margin-bottom: 0;
 }
 
 #g-navigation {
   margin: 0 auto;
-  width: 978px;
+  //width: 978px;
 }
 
 .breadcrumb {
