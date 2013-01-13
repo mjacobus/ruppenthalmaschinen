@@ -1,3 +1,11 @@
+p {
+  text-align: justify;
+}
+
+h1 {
+  font-weight: bold
+}
+
 #banner .logo img{
   width: 296px;
   
@@ -58,10 +66,14 @@ ul.simple-drop-down-menu li.current {
   
 }
 
-section.home-products {
-  width: 100%;
+.span6 {
+  width: 45%;
   float: left;
+  font-size: 12px;
   
+  &.left{ margin-right: 5% }
+  &.right{ margin-left: 5% }
+
   article {
     border-bottom: 1px solid #eee;
     margin-bottom: 20px;
@@ -76,14 +88,17 @@ section.home-products {
    
     img {
       float: left;
-      margin: 0 10px 10px 0;
+      margin: 0 10px 5px 0;
     }
     
     h2 {
       float: left;
-      width: 882px;
+      width: 350px;
       color: #666666;
       margin: 0;
+      font-size: 12px;
+      font-family: Tahoma,Verdana,Arial,sans-serif;
+      font-weight: bold;
     }
     
     p {
@@ -94,4 +109,10 @@ section.home-products {
 
 .float-right {
   float: right;
+}
+
+.row {
+  float:left;
+  width: 100%;
+
 }

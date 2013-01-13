@@ -12,53 +12,83 @@
               <div class="banner" style="background: green; width: 100%; height: 100%; float:left;"></div>
             </div>
           
-            <!--block-->
-            <div class="block type1">
-                <h1 class="first-word double-color">Quem somos?</h1>
-                <div class="content">
-                    <a href="/sobre-a-empresa.html" title="RUPPENTHAL & RUPPENTHAL" class="preloading-light img-border align-none">
-                        <img src="/assets/pix/slide1-min.jpg" width="280" alt="RUPPENTHAL & RUPPENTHAL">
-                    </a>
-                    <div class="clear">
-                    </div>
-                    
-                    <%= simple_format snippet('home.descricao') %>
-                </div>
-                <a class="read-more" href="<%= static_path('sobre-a-empresa') %> " title="Saba Mais">Saiba Mais</a>
-            </div>
-            <!--/block-->
-            
-            <!--block-->
-            <div class="float-right">
-                <%= home_video %>
-            </div>
-            <!--/block-->
-            
-            
-            <!--block-->
-            
-            <section class="home-products">
-              <header><h1 class="first-word double-color">Produtos</h1></header>
-              
-              <% home_products.each do |product|%>
-                <article>
-                    <header>
-                      <%= link_to product_path(product) do %>
-                        <%= picture(product.pictures.first, :thumb) %>
-                      <% end %>  
+            <div class="row">
+              <!--block-->
+              <article class="span6">
+                  <h1 class="double-color">Conheça a Ruppenthal Maschinen</h1>
+                  <div class="content">
+                      <a href="/sobre-a-empresa.html" title="RUPPENTHAL & RUPPENTHAL" class="preloading-light img-border align-none">
+                          <img src="/assets/pix/slide1-min.jpg" width="430" alt="RUPPENTHAL & RUPPENTHAL">
+                      </a>
+                      <div class="clear">
+                      </div>
                       
-                      <%= link_to product_path(product) do %>
-                        <h2><%= product.name %></h2>
-                      <% end %>
-                    </header>
-                  <%= link_to product_path(product) do %>  
-                    <p><%= product.application %></p>
-                  <% end %>
-                </article>
-              <% end %>
+                      <%= simple_format snippet('home.descricao') %>
+                  </div>
+                  <a class="read-more" href="<%= static_path('sobre-a-empresa') %> " title="Saba Mais">Saiba Mais</a>
+              </article>
+              <!--/block-->
               
-            </section>
-            <!--/block-->
+              <!--block-->
+              <aside class="float-right">
+                  <h1 class="double-color">Veja um vídeo de nossos produtos</h1>
+                  <%= home_video %>
+              </aside>
+              <!--/block-->
+            </div>
+
+            <div class="row">
+              <br><br><br><br>
+            </div>
+            
+            <div class="row">
+              <!--block-->
+              
+              <section class="span6 left">
+                <header><h1 class="double-color">Produtos</h1></header>
+                
+                <% home_products.each do |product|%>
+                  <article>
+                      <header>
+                        <%= link_to product_path(product) do %>
+                          <%= picture(product.pictures.first, :thumb) %>
+                        <% end %>  
+                        
+                        <%= link_to product_path(product) do %>
+                          <h2><%= product.name %></h2>
+                        <% end %>
+                      </header>
+                    <%= link_to product_path(product) do %>  
+                      <p><%= product.application %></p>
+                    <% end %>
+                  </article>
+                <% end %>
+                
+              </section>
+
+              <section class="span6 right">
+                <header><h1 class="double-color">Serviços</h1></header>
+                
+                <% home_services.each do |service|%>
+                  <article>
+                      <header>
+                        <%= link_to service_path(service) do %>
+                          <%= picture(service.pictures.first, :thumb) %>
+                        <% end %>  
+                        
+                        <%= link_to service_path(service) do %>
+                          <h2><%= service.title %></h2>
+                        <% end %>
+                      </header>
+                    <%= link_to service_path(service) do %>  
+                      <p><%= service.description %></p>
+                    <% end %>
+                  </article>
+                <% end %>
+                
+              </section>
+              <!--/block-->
+            </div> <!--.row-->
         </div>
         <!--/Entry-->
         
