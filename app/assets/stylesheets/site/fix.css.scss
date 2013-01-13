@@ -135,9 +135,36 @@ ul.simple-drop-down-menu li.current {
 
 #navigation-bar {
   width: 100%;
+  margin-bottom: 0;
 }
 
 #g-navigation {
   margin: 0 auto;
   width: 978px;
+}
+
+.breadcrumb {
+  float:left;
+  width: 100%;
+  position: relative;
+  margin-bottom: 35px;
+  font-size: 14px;
+}
+
+#content h1.double-color, #sidebar h1.double-color {
+  text-align:left;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+#sidebar {
+  margin-top: 32px;
+}
+
+strong {
+  color:black;
 }
