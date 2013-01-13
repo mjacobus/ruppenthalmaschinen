@@ -85,7 +85,7 @@ simple_menu.active = :products
                 <% classification_id = product.classification_id %>
                 <li class="title" data-hide="<%= product.classification.name.parameterize %>"><%= product.classification.name %></li>
               <% end %>  
-              <li class="toggable <%= product.classification.name.parameterize %>">
+              <li class="toggable <%= product.classification.try(:name).try(:parameterize) %>">
                   <%= link_to(product.name,product_path(product))  %>
               </li>
             <% end %>
