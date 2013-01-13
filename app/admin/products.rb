@@ -76,6 +76,7 @@ ActiveAdmin.register Product do
       f.input :name
       f.input :application
       f.input :video, :hint => raw("O código do youtube: http://www.youtube.com/watch?v=<strong>YBrTccemsOc</strong>")
+      f.input :video_description
       f.input :enabled
       f.input :home
     end

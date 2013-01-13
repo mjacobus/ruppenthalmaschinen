@@ -17,6 +17,7 @@ describe Product do
   it { should allow_mass_assignment_of(:name) }
   it { should allow_mass_assignment_of(:home) }
   it { should allow_mass_assignment_of(:video) }
+  it { should allow_mass_assignment_of(:video_description) }
   it { should allow_mass_assignment_of(:application) }
   it { should allow_mass_assignment_of(:slug) }
   it { should allow_mass_assignment_of(:enabled) }

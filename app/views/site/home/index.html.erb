@@ -25,64 +25,53 @@
                       
                       <%= simple_format snippet('home.descricao') %>
                   </div>
-                  <a class="read-more" href="<%= static_path('sobre-a-empresa') %> " title="Saba Mais">Saiba Mais</a>
+                  <a class="read-more" href="<%= static_path('sobre-a-empresa') %> ">Saiba Mais</a>
               </article>
               <!--/block-->
               
               <!--block-->
-              <aside class="float-right">
-                  <h1 class="double-color">Veja um vídeo de nossos produtos</h1>
-                  <%= home_video %>
-              </aside>
+              <% if home_video %>
+                <aside class="float-right span6">
+                    <h1 class="double-color float-right">Veja um vídeo de nossos produtos</h1>
+                    <%= home_video %>
+                </aside>
+              <% end %>
               <!--/block-->
             </div>
 
-            <div class="row">
-              <br><br><br><br>
-            </div>
-            
+
             <div class="row">
               <!--block-->
               
-              <section class="span6 left">
+              <section class="span6 left products">
                 <header><h1 class="double-color">Produtos</h1></header>
                 
                 <% home_products.each do |product|%>
                   <article>
                       <header>
-                        <%= link_to product_path(product) do %>
-                          <%= picture(product.pictures.first, :thumb) %>
-                        <% end %>  
-                        
-                        <%= link_to product_path(product) do %>
-                          <h2><%= product.name %></h2>
-                        <% end %>
+                        <%= picture(product.pictures.first, :small) %>
+                        <h2><%= product.name %></h2>
                       </header>
-                    <%= link_to product_path(product) do %>  
                       <p><%= product.application %></p>
-                    <% end %>
+
+                      <%= link_to("Veja Mais", product_path(product), class: 'read-more', alt: 'Veja Mais') %>
                   </article>
                 <% end %>
                 
               </section>
 
-              <section class="span6 right">
+              <section class="span6 right services">
                 <header><h1 class="double-color">Serviços</h1></header>
                 
                 <% home_services.each do |service|%>
                   <article>
                       <header>
-                        <%= link_to service_path(service) do %>
-                          <%= picture(service.pictures.first, :thumb) %>
-                        <% end %>  
-                        
-                        <%= link_to service_path(service) do %>
+                          <%= picture(service.pictures.first, :small) %>
                           <h2><%= service.title %></h2>
-                        <% end %>
                       </header>
-                    <%= link_to service_path(service) do %>  
                       <p><%= service.description %></p>
-                    <% end %>
+
+                    <%= link_to("Veja Mais", service_path(service), class: 'read-more', alt: 'Veja Mais') %>
                   </article>
                 <% end %>
                 

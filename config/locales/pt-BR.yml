@@ -344,6 +344,8 @@
         enabled: Ativo
         slug: Url
         type: Tipo
+        video_description: Descrição do Vídeo
+        video: Vídeo
         category: Categoria
         features: Especificações Técnicas
         created_at: Criado em

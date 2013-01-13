@@ -75,17 +75,10 @@ ul.simple-drop-down-menu li.current {
   &.right{ margin-left: 5% }
 
   article {
-    border-bottom: 1px solid #eee;
     margin-bottom: 20px;
     float: left;
     width: 100%;
     
-    &:hover, a:hover {
-      h2, p {
-        color: #333;
-      }
-    }
-   
     img {
       float: left;
       margin: 0 10px 5px 0;
@@ -93,8 +86,8 @@ ul.simple-drop-down-menu li.current {
     
     h2 {
       float: left;
-      width: 350px;
-      color: #666666;
+      width: 310px;
+      color: black;
       margin: 0;
       font-size: 12px;
       font-family: Tahoma,Verdana,Arial,sans-serif;
@@ -115,4 +108,23 @@ ul.simple-drop-down-menu li.current {
   float:left;
   width: 100%;
 
+}
+
+.home-video {
+  float: right;
+  * { float:right; }
+  p {
+    width: 420px;
+
+  }
+}
+
+.products article, .services article {
+  border-bottom: 1px solid #eee;
+
+  a {
+    float: left;
+  }
+
+  img { height: 90px; }
 }

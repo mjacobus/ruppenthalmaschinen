@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
   attr_accessible :application, :name, :slug,
-    :type_id, :enabled, :category_id, :home, :video,
+    :type_id, :enabled, :category_id, :home, :video, :video_description,
     :parent_id, :classification_id
   
   has_many :pictures, :as => :imageable, :order => :sequence
