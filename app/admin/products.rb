@@ -15,19 +15,21 @@ ActiveAdmin.register Product do
       end
     end
     column :name
-    column :home do |product|
-      product.home? ? 'Sim' : 'Não'
+    column :home, sortable: :home do |product|
+      t(product.home?).to_s
     end
-    column :enabled do |product|
-      product.enabled? ? 'Sim' : 'Não'
+    column :peca, sortable: :parent_id do |product|
+      if product.parent_id?
+        link_to t(product.parent_id?.to_s), admin_product_path(product.parent)
+      else
+        t(product.parent_id?.to_s)  
+      end
     end
+    column :enabled, sortable: :enabled do |product|
+      t(product.enabled?).to_s
+    end
+    
     column :category
-    column :features do |product|
-      link_to t(:manage), "/admin/products/#{product.id}/features"
-    end
-    column :images do |product|
-      link_to t(:manage), "/admin/products/#{product.id}/pictures"
-    end
     
     default_actions
     

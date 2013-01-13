@@ -16,16 +16,12 @@ ActiveAdmin.register Service do
     
     column :title
     
-    column :home do |product|
-      product.home? ? 'Sim' : 'Não'
+    column :home, sortable: :home do |product|
+      t(product.home?).to_s
     end
     
-    column :enabled do |product|
-      product.enabled? ? 'Sim' : 'Não'
-    end
-    
-    column :images do |service|
-      link_to t(:manage), "/admin/services/#{service.id}/pictures"
+    column :enabled, sortable: :enabled do |product|
+      t(product.enabled?).to_s
     end
     
     default_actions
