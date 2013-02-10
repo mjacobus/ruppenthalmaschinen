@@ -8,10 +8,10 @@
         <div class="entry three-column fixed-width-wrapper">
             <div id="home-banner">
               <% %w(01 02 03 04 05 06 07 08 09 10 11).each do |banner| %>
-                <div class="banner"><%= image_tag("banners/#{banner}.jpg")%></div>
+                <div class="banner <%= 'hidden' unless (banner == '01')%>"><%= image_tag("banners/#{banner}.jpg")%></div>
               <% end %>
             </div>
-          
+
             <div class="row">
               <!--block-->
               <article class="span6">
@@ -22,13 +22,13 @@
                       </a>
                       <div class="clear">
                       </div>
-                      
+
                       <%= simple_format snippet('home.descricao') %>
                   </div>
                   <a class="read-more" href="<%= static_path('sobre-a-empresa') %> ">Saiba Mais</a>
               </article>
               <!--/block-->
-              
+
               <!--block-->
               <% if home_video %>
                 <aside class="float-right span6">
@@ -42,10 +42,10 @@
 
             <div class="row">
               <!--block-->
-              
+
               <section class="span6 left products">
                 <header><h1 class="double-color">Produtos</h1></header>
-                
+
                 <% home_products.each do |product|%>
                   <article>
                       <header>
@@ -57,12 +57,12 @@
                       <%= link_to("Veja Mais", product_path(product), class: 'read-more', alt: 'Veja Mais') %>
                   </article>
                 <% end %>
-                
+
               </section>
 
               <section class="span6 right services">
                 <header><h1 class="double-color">Serviços</h1></header>
-                
+
                 <% home_services.each do |service|%>
                   <article>
                       <header>
@@ -74,13 +74,13 @@
                     <%= link_to("Veja Mais", service_path(service), class: 'read-more', alt: 'Veja Mais') %>
                   </article>
                 <% end %>
-                
+
               </section>
               <!--/block-->
             </div> <!--.row-->
         </div>
         <!--/Entry-->
-        
+
     </div>
 </div>
 <!--/Body content-->
