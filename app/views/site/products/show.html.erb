@@ -12,13 +12,13 @@ simple_menu.active = :products
             <h1 class="first-word double-color sp"><%= @product.name %></h1>
           </div>
           <div class="post entry-content">
-           
-              
+
+
             <div class="topproduct">
               <div class="images main">
                 <%= picture(@product.pictures.first, :medium) %>
               </div>
-            
+
                <h2>Sobre o produto</h2>
             <p>
               <strong>Tipo:</strong> <%= @product.type.name %><br/>
@@ -43,11 +43,11 @@ simple_menu.active = :products
                   <% @product.pictures.each do |picture| %>
                     <%= link_to picture.file.url(:medium), :class => :img do %>
                       <%= picture(picture, :small) %>
-                    <% end%> 
+                    <% end%>
                   <% end %>
                 </div>
               </div>
-  
+
               <script type="text/javascript">
                 $('.images a.img').click(function(){
                   $('.images.main img').attr('src', $(this).attr('href'));
@@ -56,7 +56,7 @@ simple_menu.active = :products
               </script>
             <% end %>
           </div>
-          
+
           <% if @product.video && !@product.video.empty? %>
           <h2>Veja um vídeo deste produto</h2>
           <div id="home">
@@ -67,16 +67,17 @@ simple_menu.active = :products
                     allowfullscreen>
             </iframe>
           </div>
+          <%= simple_format(@product.video_description) %>
           <% end %>
       </div>
       <!--/Content-->
       <!--Sidebar-->
-      
+
       <% unless @product.products.empty? %>
         <div id="sidebar" class="float-right">
           <!--box-->
           <div class="box">
-            <h2 class="first-word double-color sp">Veja 
+            <h2 class="first-word double-color sp">Veja
               as peças de reposição</h2>
             <ul class="list cat">
             <% classification_id = nil %>
@@ -84,7 +85,7 @@ simple_menu.active = :products
               <% if classification_id != product.classification_id %>
                 <% classification_id = product.classification_id %>
                 <li class="title" data-hide="<%= product.classification.name.parameterize %>"><%= product.classification.name %></li>
-              <% end %>  
+              <% end %>
               <li class="toggable <%= product.classification.try(:name).try(:parameterize) %>">
                   <%= link_to(product.name,product_path(product))  %>
               </li>
