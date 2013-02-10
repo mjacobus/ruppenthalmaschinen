@@ -20,7 +20,7 @@ ssh_options[:forward_agent] = true
 set :repository,  "git@github.com:mjacobus/ruppenthalmaschinen.git"
 set :scm, :git
 set :git_enable_submodules,1
-set :branch, 'development'
+set :branch, 'master'
 # set :git_shallow_clone, 1
 set :scm_verbose, true
 
