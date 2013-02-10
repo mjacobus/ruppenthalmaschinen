@@ -11,13 +11,13 @@ after 'deploy:update_code', 'deploy:symlink_db','deploy:symlink_email_config'
 
 
 default_run_options[:pty] = true
-   
+
 # ssh
 ssh_options[:forward_agent] = true
 #ssh_options[:verbose] = :debug
 
 # SCM
-set :repository,  "git@github.com:mjacobus/Diego.git"
+set :repository,  "git@github.com:mjacobus/ruppenthalmaschinen.git"
 set :scm, :git
 set :git_enable_submodules,1
 set :branch, 'development'
