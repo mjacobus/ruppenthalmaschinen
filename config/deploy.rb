@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 
 
-set :application, "test.ruppenthalmaschinen.com.br"
+set :application, "www.ruppenthalmaschinen.com.br"
 
 # user defined vars
 set :user, 'marceloadmin'
