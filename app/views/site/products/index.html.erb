@@ -41,7 +41,7 @@ end
   </div>
   
   <% @products.each do |p|%>
-  <div data-id="post-15" data-type="<%= p.type.name %>" class="block" >
+  <div data-type="<%= p.type.name %>" class="block" >
       <a href="<%= product_path(p) %>" title="<%= p.name %>" class="img-border">
         <%= picture(p.pictures.first,:medium) %> 
       </a>
