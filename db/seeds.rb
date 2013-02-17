@@ -6,6 +6,14 @@
 # Service.delete_all
 # ProductType.delete_all
 
+IMAGE_PATH = Rails.root. + 'db/seeds/pictures'
+
+def add_pictures(picturable)
+  (1..5).to_a.slice(rand(6),rand(6)).each do |num|
+    picturable.pictures.create!(file: File.open("#{IMAGE_PATH}/#{"%02d" % num}.jpg"))
+  end
+end
+
 @maquina = ProductType.find_or_create_by_name_and_slug_and_sequence!(
   :name => 'Máquina',
   :slug => 'maquinas',
@@ -15,7 +23,7 @@
 @peca = ProductType.find_or_create_by_name_and_slug_and_sequence!(
   :name => 'Peça',
   :slug => 'pecas',
-  :sequence => 1
+  :sequence => 2
 )
 
 @automotivo = Category.find_or_create_by_name!(:name => 'Automotivo')
@@ -32,10 +40,11 @@
   
   @product.features << Feature.find_or_create_by_product_id_and_name_and_value(@product.id, "peso", "#{i} kilos")
   @product.features << Feature.find_or_create_by_product_id_and_name_and_value(@product.id, "altura", "#{i} cm")
+  add_pictures @product
 end
 
 1.upto(15) do |i|
-  Service.find_or_create_by_title_and_description_and_enabled!(
+  add_pictures Service.find_or_create_by_title_and_description_and_enabled!(
     :title => "Serviço Bala #{i}",
     :description => "Este serviço consiste em blah blah blah.",
     :enabled => true
