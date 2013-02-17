@@ -1,12 +1,13 @@
 require "bundler/capistrano"
 
-
 set :application, "www.ruppenthalmaschinen.com.br"
+set :branch, 'master'
 
 # user defined vars
 set :user, 'marceloadmin'
 set :deploy_to, "/webapps/#{application}"
-set :domain, "www.ruppenthalmaschinen.com.br"
+set :domain, application
+
 after 'deploy:update_code', 'deploy:symlink_db','deploy:symlink_email_config'
 
 
@@ -20,7 +21,6 @@ ssh_options[:forward_agent] = true
 set :repository,  "git@github.com:mjacobus/ruppenthalmaschinen.git"
 set :scm, :git
 set :git_enable_submodules,1
-set :branch, 'master'
 # set :git_shallow_clone, 1
 set :scm_verbose, true
 
@@ -29,18 +29,7 @@ set :scm_verbose, true
 role :web, domain                          # Your HTTP server, Apache/etc
 role :app, domain                          # This may be the same as your `Web` server
 role :db,  domain, :primary => true        # This is where Rails migrations will run
-# role :db,  "your slave db-server here"
 
-# if you want to clean up old releases on each deploy uncomment this:
-# after "deploy:restart", "deploy:cleanup"
-
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
-
-#
-# share database.yml
-#
-# after 'deploy:update_code', 'deploy:symlink_db'
 namespace :deploy do
   desc "Symlinks the database.yml"
   task :symlink_db, :roles => :app do
