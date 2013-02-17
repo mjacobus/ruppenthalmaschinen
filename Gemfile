@@ -50,14 +50,12 @@ gem 'capistrano'
 # gem 'ruby-debug'
 
 
-group :development, :test do
-  gem "ruby-prof"
+group :test, :development do
+  gem "simplecov"
+  gem "rspec-rails"
+  gem 'factory_girl_rails'
+  gem "shoulda-matchers"
+  gem "database_cleaner"
   gem "guard-rspec"
-  gem "rspec-rails", "~> 2.6"
-  gem 'factory_girl_rails', '~> 1.1' # need older version because of ruby 1.8
-  # gem 'rb-inotify', '~> 0.8.8'
-  # gem 'shoulda-context'
-  # gem 'rack-mini-profiler'
-  gem 'shoulda-matchers'
+  gem "rb-inotify"
 end
-
